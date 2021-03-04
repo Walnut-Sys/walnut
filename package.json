@@ -1,0 +1,29 @@
+{
+	"name": "walnut",
+	"version": "1.0.0",
+	"description": "DSL for generating chess problem cards",
+	"main": "index.js",
+	"scripts": {
+		"lint": "eslint .",
+		"test": "eslint .",
+	  	"format": "prettier --write ./src",
+	  	"build": "tsc"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Walnut-Sys/walnut.git"
+	},
+	"author": "Vilen Kupriienko, Mykhailo Kosiuk",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Walnut-Sys/walnut/issues"
+	},
+	"homepage": "https://github.com/Walnut-Sys/walnut#readme",
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^4.16.1",
+		"@typescript-eslint/parser": "^4.16.1",
+		"eslint": "^7.21.0",
+		"prettier": "^2.2.1",
+		"typescript": "^4.2.2"
+	}
+}
