@@ -1,9 +1,9 @@
 const helloWorld = async (duration: number) => {
-	console.log('Hello World!');
+  console.log('Hello World!');
 
-	return new Promise((resolve) => {
-		setTimeout(resolve, duration);
-	});
+  return new Promise((resolve) => {
+    setTimeout(resolve, duration);
+  });
 };
 
 helloWorld(5000);
