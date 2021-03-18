@@ -5,8 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"lint": "eslint .",
-		"test": "eslint .",
-		"format": "prettier --write ./src",
+		"test": "jest tests/",
+		"format": "prettier --write .",
 		"build": "tsc",
 		"prepare": "husky install"
 	},
@@ -21,13 +21,16 @@
 	},
 	"homepage": "https://github.com/Walnut-Sys/walnut#readme",
 	"devDependencies": {
+		"@types/jest": "^26.0.21",
 		"@typescript-eslint/eslint-plugin": "^4.16.1",
 		"@typescript-eslint/parser": "^4.16.1",
 		"eslint": "^7.21.0",
 		"eslint-config-prettier": "^8.1.0",
 		"eslint-plugin-prettier": "^3.3.1",
 		"husky": "^5.1.3",
+		"jest": "^26.6.3",
 		"prettier": "^2.2.1",
+		"ts-jest": "^26.5.4",
 		"typescript": "^4.2.2"
 	}
 }

@@ -6,4 +6,4 @@ const helloWorld = async (duration: number) => {
 	});
 };
 
-helloWorld(5000);
+export default helloWorld;
