@@ -1,9 +1,8 @@
-const helloWorld = async (duration: number) => {
-  console.log('Hello World!');
-
-  return new Promise((resolve) => {
-    setTimeout(resolve, duration);
-  });
+const helloWorld = async (duration: number): Promise<void> => {
+	console.log('Hello World!');
+	return new Promise((resolve) => {
+		setTimeout(resolve, duration);
+	});
 };
 
-helloWorld(5000);
+export default helloWorld;
