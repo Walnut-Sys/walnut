@@ -4,8 +4,8 @@
 	"description": "DSL for generating chess problem cards",
 	"main": "index.js",
 	"scripts": {
-		"lint": "eslint \"**/*.{js,ts}\"",
-		"lint:fix": "eslint \"**/*.{js,ts}\" --fix",
+		"lint": "eslint ./src",
+		"lint:fix": "eslint ./src --fix",
 		"test": "jest tests/",
 		"format": "prettier --write .",
 		"build": "tsc",
@@ -32,8 +32,6 @@
 		"husky": "^5.1.3",
 		"jest": "^26.6.3",
 		"prettier": "^2.2.1",
-		"sonarlint": "^1.1.0",
-		"ts-jest": "^26.5.4",
-		"typescript": "^4.2.2"
+		"sonarlint": "^1.1.0"
 	}
 }
