@@ -23,8 +23,10 @@
 - Поддержка стандартной нотации шахмат
 
 Диаграмма Компонентов ПО:
+
 ![image](https://user-images.githubusercontent.com/38505816/112429268-1afd4d80-8d45-11eb-8e27-9346577ab046.png)
 
 Диаграмма потока данных DataFlow:
+
 ![image](https://user-images.githubusercontent.com/38505816/112429391-42ecb100-8d45-11eb-8cc0-74462079133c.png)
 
