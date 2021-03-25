@@ -8,7 +8,6 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:sonarjs/recommended',
-		'plugin:prettier/recommended',
 		'prettier'
 	],
 	parser: '@typescript-eslint/parser',
@@ -16,15 +15,9 @@ module.exports = {
 		ecmaVersion: 12,
 		sourceType: 'module'
 	},
-	plugins: [
-		'@typescript-eslint',
-		'eslint-plugin-prettier',
-		'sonarjs',
-		'prettier'
-	],
+	plugins: ['@typescript-eslint', 'sonarjs'],
 	rules: {
 		indent: ['error', 'tab'],
-		'prettier/prettier': ['error'],
 		'sonarjs/cognitive-complexity': 'error',
 		'sonarjs/no-identical-expressions': 'error',
 		'@typescript-eslint/naming-convention': [
