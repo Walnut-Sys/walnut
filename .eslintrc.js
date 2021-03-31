@@ -24,11 +24,7 @@ module.exports = {
 			'error',
 			{
 				selector: 'interface',
-				format: ['PascalCase'],
-				custom: {
-					regex: '^I[A-Z]',
-					match: false
-				}
+				format: ['PascalCase']				
 			},
 			{
 				selector: ['variable', 'function'],

@@ -29,4 +29,3 @@
 Диаграмма потока данных DataFlow:
 
 ![image](https://user-images.githubusercontent.com/38505816/112429391-42ecb100-8d45-11eb-8cc0-74462079133c.png)
-
