@@ -1,6 +1,6 @@
 enum Notations {
-	Standard = 'standard',
-	Digital = 'digital'
+  Standard = 'standard',
+  Digital = 'digital'
 }
 
 export default Notations;

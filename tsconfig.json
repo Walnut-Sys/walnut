@@ -1,13 +1,13 @@
 {
-	"compilerOptions": {
-		"target": "es2018",
-		"module": "esnext",
-		"outDir": "./lib/esm",
-		"rootDir": "./src",
-		"moduleResolution": "node",
-		"strict": true,
-		"esModuleInterop": true,
-		"inlineSourceMap": true,
-		"forceConsistentCasingInFileNames": true,
-	}
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "esnext",
+    "outDir": "./lib/esm",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "inlineSourceMap": true,
+    "forceConsistentCasingInFileNames": true
+  }
 }

@@ -1,6 +1,6 @@
 enum Localizations {
-	EN = 'en',
-	RU = 'ru'
+  EN = 'en',
+  RU = 'ru'
 }
 
 export default Localizations;
