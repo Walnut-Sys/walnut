@@ -1,4 +1,4 @@
-import IParserOutput from './interfaces/parser-output';
+import IParserOutput from '../parser-output';
 
 export default interface IParser {
 	parse: (sourceCode: string) => IParserOutput;

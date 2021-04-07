@@ -24,7 +24,7 @@ module.exports = {
 			'error',
 			{
 				selector: 'interface',
-				format: ['PascalCase']				
+				format: ['PascalCase']
 			},
 			{
 				selector: ['variable', 'function'],

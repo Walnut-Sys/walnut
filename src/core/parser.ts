@@ -1,5 +1,5 @@
-import IParserOutput from './interfaces/parser-output';
-import IParser from './parser.interface';
+import IParserOutput from './parser-output';
+import IParser from './interfaces/parser';
 
 export default class Parser implements IParser {
 	public parse(sourceCode: string): IParserOutput {
