@@ -8,10 +8,11 @@ lerna-debug.log*
 
 # Build
 dist/
+lib/
 
 # Editors and IDEs
 .idea/
-.vs-code/
+.vscode/
 
 # macOS finder evironment config
 .DS_Store/

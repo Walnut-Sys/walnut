@@ -2,14 +2,18 @@
 	"name": "walnut",
 	"version": "1.0.0",
 	"description": "DSL for generating chess problem cards",
-	"main": "index.js",
+	"main": "lib/esm/index.js",
 	"scripts": {
 		"lint": "eslint ./src",
 		"lint:fix": "eslint ./src --fix",
 		"test": "jest tests/",
 		"format": "prettier --write .",
-		"build": "tsc",
+		"build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
 		"prepare": "husky install"
+	},
+	"exports": {
+		"require": "./lib/cjs",
+		"import": "./lib/esm"
 	},
 	"repository": {
 		"type": "git",
