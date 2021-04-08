@@ -1,6 +1,7 @@
+import Pieces from '../enums/pieces';
 import IPosition from './piece-position';
 
 export default interface IPieceDeclaration {
-  piece: string;
+  piece: Pieces;
   position: IPosition;
 }

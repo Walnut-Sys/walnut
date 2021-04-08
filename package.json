@@ -7,7 +7,8 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test": "jest tests/",
-    "format": "prettier --write .",
+    "format": "prettier .",
+    "format:fix": "prettier --write .",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "prepare": "husky install"
   },
