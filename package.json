@@ -4,7 +4,10 @@
   "description": "DSL for generating chess problem cards",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
-  "scripts": {
+	"browser": "lib/esm/index.js",
+	"cdn": "lib/esm/index.js",
+	"unpkg": "lib/esm/index.js",
+	"scripts": {
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test": "jest tests/",
