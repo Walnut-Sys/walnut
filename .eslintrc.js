@@ -17,7 +17,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'sonarjs'],
   rules: {
-    indent: ['error', 2],
+    indent: ['error', 2, { "SwitchCase": 1 }],
     'sonarjs/cognitive-complexity': 'error',
     'sonarjs/no-identical-expressions': 'error',
     '@typescript-eslint/naming-convention': [
