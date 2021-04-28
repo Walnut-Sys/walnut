@@ -7,7 +7,12 @@ import IPieceDeclaration from './interfaces/piece-declaration';
 import ParsingError from './errors/parsing-error';
 
 import { standardizeValue } from '../utils/helpers';
-import { SUPPORTED_LOCALIZATIONS, DEFAULT_COLORS, LOCALIZATIONS_DICTIONARY, DEFAULT_LOCALIZATION } from './constants';
+import {
+  SUPPORTED_LOCALIZATIONS,
+  DEFAULT_COLORS,
+  LOCALIZATIONS_DICTIONARY,
+  DEFAULT_LOCALIZATION
+} from './constants';
 
 export default class Parser implements IParser {
   /**
@@ -18,8 +23,12 @@ export default class Parser implements IParser {
   public parse(sourceCode: string): IParserOutput {
     const localization = this.parseLocalization(sourceCode);
     const colors = this.parseColors(sourceCode);
-    const whitePositions = this.parsePiecesDeclarations(sourceCode, PieceColor.WHITE, { localization });
-    const blackPositions = this.parsePiecesDeclarations(sourceCode, PieceColor.BLACK, { localization });
+    const whitePositions = this.parsePiecesDeclarations(sourceCode, PieceColor.WHITE, {
+      localization
+    });
+    const blackPositions = this.parsePiecesDeclarations(sourceCode, PieceColor.BLACK, {
+      localization
+    });
 
     return {
       localization,
@@ -61,13 +70,16 @@ export default class Parser implements IParser {
       'black squares': 'blackSquares',
       'white pieces': 'whitePieces',
       'black pieces': 'blackPieces',
-      'border': 'border'
+      border: 'border',
+      symbols: 'symbols'
     };
 
-    const lines = match[1].split(/\r?\n/).filter(line => line !== '');
+    const lines = match[1].split(/\r?\n/).filter((line) => line !== '');
 
     return lines.reduce((acc, line) => {
-      const match = line.match(/^[\t\s+]+([a-zA-Z0-9\s]+)\s*:\s*(#[a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/i);
+      const match = line.match(
+        /^[\t\s+]+([a-zA-Z0-9\s]+)\s*:\s*(#[a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/i
+      );
       if (!match) {
         throw new ParsingError(`Invalid colors declaration on line "${line.trim()}"`);
       }
@@ -99,7 +111,9 @@ export default class Parser implements IParser {
     pieceColor: PieceColor,
     { localization }: { localization: Localizations }
   ): IPieceDeclaration[] {
-    const match = sourceCode.match(new RegExp(`${pieceColor} POS\\s*:\\s*([a-zA-Zа-яА-Я\\s\\d,]+)\r?\n`, 'i'));
+    const match = sourceCode.match(
+      new RegExp(`${pieceColor} POS\\s*:\\s*([a-zA-Zа-яА-Я\\s\\d,]+)\r?\n`, 'i')
+    );
 
     if (!match) {
       throw new ParsingError('Invalid pieces positions declaration');
@@ -108,8 +122,8 @@ export default class Parser implements IParser {
     const piecesSeparator = ',';
     const rawPieces = match[1]
       .split(piecesSeparator)
-      .map(str => str.trim())
-      .filter(str => str);
+      .map((str) => str.trim())
+      .filter((str) => str);
 
     return rawPieces.reduce((acc: IPieceDeclaration[], rawPiece) => {
       const y = +rawPiece[rawPiece.length - 1];
@@ -120,9 +134,10 @@ export default class Parser implements IParser {
         );
       }
 
-      const x = LOCALIZATIONS_DICTIONARY[localization].x.findIndex(el => {
-        return el.toLowerCase() === rawPiece[rawPiece.length - 2].toLowerCase();
-      }) + 1;
+      const x =
+        LOCALIZATIONS_DICTIONARY[localization].x.findIndex((el) => {
+          return el.toLowerCase() === rawPiece[rawPiece.length - 2].toLowerCase();
+        }) + 1;
 
       if (!x) {
         throw new ParsingError(
@@ -133,7 +148,9 @@ export default class Parser implements IParser {
       const piece = LOCALIZATIONS_DICTIONARY[localization].pieces[rawPiece.slice(0, -2)];
 
       if (!piece) {
-        throw new ParsingError(`Invalid piece declaration "${rawPiece}". Piece name must be supported by localization`);
+        throw new ParsingError(
+          `Invalid piece declaration "${rawPiece}". Piece name must be supported by localization`
+        );
       }
 
       acc.push({

@@ -54,6 +54,7 @@ export const DEFAULT_COLORS: IParserOutputColors = {
   whitePieces: '#c38748',
   blackPieces: '#150503',
   whiteSquares: '#f9c48d',
-  blackSquares: '#671810',
-  border: '#e3e3e3'
+  blackSquares: '#84271d',
+  border: '#a73a2f',
+  symbols: '#efefef'
 };

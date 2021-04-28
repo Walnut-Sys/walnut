@@ -9,10 +9,11 @@ const parserOutput = parser.parse(`
 LOCALIZATION: EN
 COLORS:
   white squares: #f9c48d
-  black squares: #671810
+  black squares: #84271d
   white pieces: #c38748
   black pieces: #150503
   border: #a73a2f
+  symbols: #efefef
 
 WHITE POS: Qa5, Kc2, Bh5
 BLACK POS: Qc5, Ke2

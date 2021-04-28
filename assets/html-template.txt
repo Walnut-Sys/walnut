@@ -6,13 +6,19 @@
 			padding: 0;
 			margin: 0;
 		}
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 		.chess-grid {
+			position: relative;
 			width: 20em;
 			height: 20em;
 			display: grid;			
 			grid-template-columns: repeat(8, 1fr);
 			grid-template-rows: repeat(8, 1fr);		
-			border: 2em solid #BORDER_COLOR#;
+			border: 2.5em solid #BORDER_COLOR#;
 		}
 		.board-numbers {
 			display: flex;
@@ -37,10 +43,16 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			color: #efefef;
+			color: #SYMBOLS_COLOR#;
 			font-family: 'Century Gothic';		
 			font-weight: bold;
 		}		
+		.board-numbers > li {
+			height: 12.5%;
+		}
+		.board-letters > li {
+			width: 12.5%;
+		}
 		.square {	
 			display: flex;
 			align-items: center;
@@ -62,6 +74,21 @@
 	</style>
 </head>
 <body>
-#BOARD#
+<ul class="chess-grid">
+	<ul class="board-numbers">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+	#BOARD#
+	<ul class="board-letters">
+		#BOARD_LETTERS#
+	</ul>
+</ul>
 </body>
 </html>

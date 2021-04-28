@@ -5,6 +5,8 @@ import IOutputComposer from '../interfaces/output-composer';
 import IParserOutput from '../interfaces/parser-output';
 import IPieceDeclaration from '../interfaces/piece-declaration';
 import { generatePiecesMap } from '../mappers/piece-declaration';
+import Localizations from '../enums/localizations';
+import { LOCALIZATIONS_DICTIONARY } from '../constants';
 
 const pathToTemplate = path.join(__dirname, '..', '..', '..', '..', 'assets', 'html-template.txt');
 
@@ -17,10 +19,12 @@ export default class HTMLComposer implements IOutputComposer {
       .replace('#WHITE_SQUARE_COLOR#', parserOutput.colors.whiteSquares)
       .replace('#BLACK_PIECE_COLOR#', parserOutput.colors.blackPieces)
       .replace('#WHITE_PIECE_COLOR#', parserOutput.colors.whitePieces)
+      .replace('#SYMBOLS_COLOR#', parserOutput.colors.symbols)
       .replace(
         '#BOARD#',
         this.generateBoard(parserOutput.whitePositions, parserOutput.blackPositions)
-      );
+      )
+      .replace('#BOARD_LETTERS#', this.generateBoardLetters(parserOutput.localization));
     return Readable.from([composedHtml]);
   }
 
@@ -31,7 +35,7 @@ export default class HTMLComposer implements IOutputComposer {
   ): string {
     const whitePiecesMap = generatePiecesMap(whitePieces);
     const blackPiecesMap = generatePiecesMap(blackPieces);
-    let board = `<ul class="chess-grid">`;
+    let board = '';
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
         let squareClass: string;
@@ -45,12 +49,22 @@ export default class HTMLComposer implements IOutputComposer {
         }
 
         board += `\n\t<li class="square ${squareClass}">`;
-        board += whitePieceIfExists ? `\n\t\t<span class="white-piece">${whitePieceIfExists}</span>` : '';
-        board += blackPieceIfExists ? `\n\t\t<span class="black-piece">${blackPieceIfExists}</span>` : '';
+        board += whitePieceIfExists
+          ? `\n\t\t<span class="white-piece">${whitePieceIfExists}</span>`
+          : '';
+        board += blackPieceIfExists
+          ? `\n\t\t<span class="black-piece">${blackPieceIfExists}</span>`
+          : '';
         board += '\n\t</li>';
       }
     }
-    board += '\n</ul>';
     return board;
+  }
+
+  private generateBoardLetters(localization: Localizations): string {
+    return LOCALIZATIONS_DICTIONARY[localization].x.reduce(
+      (acc, letter) => acc + `<li>${letter}</li>`,
+      ''
+    );
   }
 }

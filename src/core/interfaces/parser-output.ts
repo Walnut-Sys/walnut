@@ -15,4 +15,5 @@ export interface IParserOutputColors {
   whiteSquares: string;
   blackSquares: string;
   border: string;
+  symbols: string;
 }
