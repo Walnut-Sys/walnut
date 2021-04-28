@@ -49,13 +49,13 @@ export default class HTMLComposer implements IOutputComposer {
           throw new Error(`Two pieces on same square found.`);
         }
 
-        board += `
-        <li class="square ${squareClass}">
-        ${whitePieceIfExists ? `<span class="white-piece">${whitePieceIfExists}</span>` : ''}
-        ${blackPieceIfExists ? `<span class="black-piece">${blackPieceIfExists}</span>` : ''}</li>`;
+        board += `\n\t<li class="square ${squareClass}">`;
+        board += whitePieceIfExists ? `\n\t\t<span class="white-piece">${whitePieceIfExists}</span>` : '';
+        board += blackPieceIfExists ? `\n\t\t<span class="black-piece">${blackPieceIfExists}</span>` : '';
+        board += '\n\t</li>';
       }
     }
-    board += '</ul>';
+    board += '\n</ul>';
     return board;
   }
 }
