@@ -7,15 +7,11 @@ import IPieceDeclaration from '../interfaces/piece-declaration';
 import { generatePiecesMap } from '../mappers/piece-declaration';
 
 const pathToTemplate = path.resolve(
-  __dirname,
-  '..',
-  '..',
   '..',
   '..',
   'assets',
   'html-template.txt'
 );
-console.log(pathToTemplate);
 
 export default class HTMLComposer implements IOutputComposer {
   public async compose(parserOutput: IParserOutput): Promise<Readable> {
