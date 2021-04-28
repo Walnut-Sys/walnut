@@ -1,0 +1,228 @@
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8" />
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.chess-grid {
+			position: relative;
+			width: 20em;
+			height: 20em;
+			display: grid;
+			grid-template-columns: repeat(8, 1fr);
+			grid-template-rows: repeat(8, 1fr);
+			border: 2.5em solid #a73a2f;
+		}
+		.board-numbers {
+			display: flex;
+			flex-flow: column-reverse;
+			position: absolute;
+			justify-content: space-between;
+			height: 100%;
+			left: -7.5%;
+		}
+		.board-letters {
+			display: flex;
+			flex-flow: row;
+			justify-content: space-between;
+			align-items: center;
+			position: absolute;
+			width: 100%;
+			bottom: -9%;
+		}
+		.board-letters > li,
+		.board-numbers > li {
+			list-style: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #efefef;
+			font-family: 'Century Gothic';
+			font-weight: bold;
+		}
+		.board-numbers > li {
+			height: 12.5%;
+		}
+		.board-letters > li {
+			width: 12.5%;
+		}
+		.square {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.9em;
+		}
+		.black-square {
+			background-color: #84271d;
+		}
+		.white-square {
+			background-color: #f9c48d;
+		}
+		.black-piece {
+			color: #150503;
+		}
+		.white-piece {
+			color: #c38748;
+		}
+	</style>
+</head>
+<body>
+<ul class="chess-grid">
+	<ul class="board-numbers">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+	
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+		<span class="white-piece">&#x265B;</span>
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+		<span class="white-piece">&#x265A;</span>
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+		<span class="black-piece">&#x265B;</span>
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+		<span class="black-piece">&#x265A;</span>
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+		<span class="white-piece">&#x265D;</span>
+	</li>
+	<li class="square black-square">
+	</li>
+	<li class="square white-square">
+	</li>
+	<li class="square black-square">
+	</li>
+	<ul class="board-letters">
+		<li>A</li><li>B</li><li>C</li><li>D</li><li>E</li><li>F</li><li>G</li><li>H</li>
+	</ul>
+</ul>
+</body>
+</html>
