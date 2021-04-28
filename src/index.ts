@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import Parser from './core/parser';
 import HTMLComposer from './core/output-composers/html';
 
@@ -21,10 +23,11 @@ SOLVE:
     3. Фd1-h5 Кg8-f6
     4. Фh5xf7#
 `);
+
 const run = async () => {
-  const stream = await composer.compose(parserOutput);
-  stream.on('data', (chunk) => {
-    console.log(chunk);
-  });
+  const outputStream = await composer.compose(parserOutput);
+  const filepath = path.resolve('..', '..', 'index.html');
+  const file = fs.createWriteStream(filepath);
+  outputStream.pipe(file);
 };
 run();
