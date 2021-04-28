@@ -1,10 +1,10 @@
 enum Pieces {
-  king = 'K',
-  queen = 'Q',
-  rook = 'R',
-  knight = 'N',
-  bishop = 'B',
-  pawn = 'P'
+  King = 'K',
+  Queen = 'Q',
+  Rook = 'R',
+  Knight = 'N',
+  Bishop = 'B',
+  Pawn = 'P'
 }
 
 export default Pieces;

@@ -1,0 +1,50 @@
+import Localizations from '../enums/localizations';
+import { IParserOutputColors } from '../interfaces/parser-output';
+import Pieces from '../enums/pieces';
+
+interface ILocalizationsDictionary {
+  [key: string]: {
+    x: string[];
+    pieces: {
+      [key: string]: string;
+    }
+  }
+}
+
+export const LOCALIZATIONS_DICTIONARY: ILocalizationsDictionary = {
+  [Localizations.EN]: {
+    x: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+    pieces: {
+      'K': Pieces.King,
+      'Q': Pieces.Queen,
+      'R': Pieces.Rook,
+      'N': Pieces.Knight,
+      'B': Pieces.Bishop,
+      'P': Pieces.Pawn,
+      '': Pieces.Pawn
+    }
+  },
+  [Localizations.RU]: {
+    x: ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З'],
+    pieces: {
+      'Кр': Pieces.King,
+      'Ф': Pieces.Queen,
+      'Л': Pieces.Rook,
+      'К': Pieces.Knight,
+      'С': Pieces.Bishop,
+      'П': Pieces.Pawn,
+      '': Pieces.Pawn
+    }
+  }
+};
+
+export const SUPPORTED_LOCALIZATIONS = Object.values(Localizations);
+
+export const DEFAULT_LOCALIZATION = Localizations.EN;
+export const DEFAULT_COLORS: IParserOutputColors = {
+  whitePieces: '#c38748',
+  blackPieces: '#150503',
+  whiteSquares: '#f9c48d',
+  blackSquares: '#671810',
+  border: '#e3e3e3'
+};
