@@ -2,8 +2,11 @@
 <head>
 	<title></title>
 	<style type="text/css">
-		.chess-grid {
+		* {
 			padding: 0;
+			margin: 0;
+		}
+		.chess-grid {
 			width: 20em;
 			height: 20em;
 			display: grid;			
@@ -11,6 +14,33 @@
 			grid-template-rows: repeat(8, 1fr);		
 			border: 2em solid #BORDER_COLOR#;
 		}
+		.board-numbers {
+			display: flex;
+			flex-flow: column-reverse;
+			position: absolute;
+			justify-content: space-between;
+			height: 100%;
+			left: -7.5%;
+		}		
+		.board-letters {
+			display: flex;
+			flex-flow: row;
+			justify-content: space-between;
+			align-items: center;
+			position: absolute;
+			width: 100%;
+			bottom: -9%;					
+		}
+		.board-letters > li,
+		.board-numbers > li {
+			list-style: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #efefef;
+			font-family: 'Century Gothic';		
+			font-weight: bold;
+		}		
 		.square {	
 			display: flex;
 			align-items: center;

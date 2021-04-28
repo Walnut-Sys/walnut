@@ -26,7 +26,7 @@ SOLVE:
 
 const run = async () => {
   const outputStream = await composer.compose(parserOutput);
-  const filepath = path.resolve('..', '..', 'index.html');
+  const filepath = path.join(__dirname, '..', '..', 'index.html');
   const file = fs.createWriteStream(filepath);
   outputStream.pipe(file);
 };

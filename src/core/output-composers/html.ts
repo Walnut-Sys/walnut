@@ -6,12 +6,7 @@ import IParserOutput from '../interfaces/parser-output';
 import IPieceDeclaration from '../interfaces/piece-declaration';
 import { generatePiecesMap } from '../mappers/piece-declaration';
 
-const pathToTemplate = path.resolve(
-  '..',
-  '..',
-  'assets',
-  'html-template.txt'
-);
+const pathToTemplate = path.join(__dirname, '..', '..', '..', '..', 'assets', 'html-template.txt');
 
 export default class HTMLComposer implements IOutputComposer {
   public async compose(parserOutput: IParserOutput): Promise<Readable> {
