@@ -42,8 +42,8 @@ export default class HTMLComposer implements IOutputComposer {
         if (i % 2 == 0) squareClass = j % 2 == 0 ? 'black-square' : 'white-square';
         else squareClass = j % 2 == 0 ? 'white-square' : 'black-square';
 
-        const whitePieceIfExists = whitePiecesMap.get(`${i + 1},${j + 1}`);
-        const blackPieceIfExists = blackPiecesMap.get(`${i + 1},${j + 1}`);
+        const whitePieceIfExists = whitePiecesMap.get(`${j + 1},${8 - i}`);
+        const blackPieceIfExists = blackPiecesMap.get(`${j + 1},${8 - i}`);
         if (whitePieceIfExists && blackPieceIfExists) {
           throw new Error(`Two pieces on same square found.`);
         }
