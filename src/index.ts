@@ -112,7 +112,7 @@ const { argv } = yargs
     const parser = new Parser();
     parserOutput = parser.parse(sourceCode);
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
     process.exit(1);
   }
 
