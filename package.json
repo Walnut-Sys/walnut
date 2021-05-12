@@ -4,10 +4,11 @@
   "description": "DSL for generating chess problem cards",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
-	"browser": "lib/esm/index.js",
-	"cdn": "lib/esm/index.js",
-	"unpkg": "lib/esm/index.js",
-	"scripts": {
+	"bin": "./lib/cjs/index.js",
+	"browser": "lib/cjs/index.js",
+  "cdn": "lib/cjs/index.js",
+  "unpkg": "lib/cjs/index.js",
+  "scripts": {
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test": "jest tests/",
@@ -43,5 +44,8 @@
     "prettier": "^2.2.1",
     "sonarlint": "^1.1.0",
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "yargs": "^17.0.1"
   }
 }
