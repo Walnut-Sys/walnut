@@ -47,19 +47,20 @@ const fillSvgPieces = (
 ): string => {
   const whitePiecesMap = generatePiecesMap(whitePos);
   const blackPiecesMap = generatePiecesMap(blackPos);
-  whitePiecesMap.forEach((coords, piece) => {
-    const squareLetter = LOCALIZATIONS_DICTIONARY['en'].x[parseInt(coords.split(',')[0])];
+  whitePiecesMap.forEach((piece, coords) => {
+    const squareLetter = LOCALIZATIONS_DICTIONARY['en'].x[parseInt(coords.split(',')[0]) - 1];
     const squareNumber = coords.split(',')[1];
     svgTemplate = svgTemplate
       .replace(`<!--${squareLetter}${squareNumber}-->`, piece)
       .replace(`<!--${squareLetter}${squareNumber}_CLASS-->`, 'wp');
   });
-  blackPiecesMap.forEach((coords, piece) => {
-    const squareLetter = LOCALIZATIONS_DICTIONARY['en'].x[parseInt(coords.split(',')[0])];
+  blackPiecesMap.forEach((piece, coords) => {
+    const squareLetter = LOCALIZATIONS_DICTIONARY['en'].x[parseInt(coords.split(',')[0]) - 1];
     const squareNumber = coords.split(',')[1];
     svgTemplate = svgTemplate
       .replace(`<!--${squareLetter}${squareNumber}-->`, piece)
       .replace(`<!--${squareLetter}${squareNumber}_CLASS-->`, 'bp');
   });
+  svgTemplate = svgTemplate.replace(/<!--\D\d_CLASS-->/g, '');
   return svgTemplate;
 };

@@ -2,7 +2,7 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 567.93 567.93">
     <defs>
         <style>
-        .border{fill:<!--BORDER_COLOR-->;stroke:<!--BORDER_COLOR-->;stroke-miterlimit:10;}
+        .border{fill:<!--BORDER_COLOR-->;stroke-miterlimit:10;}
         .bs{fill:<!--BLACK_SQUARE_COLOR-->;}
         .ws{fill:<!--WHITE_SQUARE_COLOR-->;}
         .sym{font-size:27px;letter-spacing:0em;fill:<!--SYMBOLS_COLOR-->;font-family:CenturyGothic-Bold, Century Gothic;font-weight:700;}        

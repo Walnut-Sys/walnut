@@ -8,11 +8,12 @@ import ComposingError from '../errors/composing-error';
 export default class PNGComposer implements IOutputComposer {
   public async compose(parserOutput: IParserOutput): Promise<Readable> {
     const svgBuffer = await fillSVGTemplate(parserOutput);
+    console.log(svgBuffer.toString());
     try {
       const data = await sharp(svgBuffer).toFormat('png').toBuffer();
       return Readable.from([data]);
     } catch (error) {
-      throw new ComposingError('Error while composing png output');
+      throw new ComposingError(`Error while composing png output: ${error}`);
     }
   }
 }

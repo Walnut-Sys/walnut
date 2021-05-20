@@ -122,7 +122,7 @@ const { argv } = yargs
     const outputComposer = new outputComposers[selectedOutputType]();
     result = await outputComposer.compose(parserOutput);
   } catch (err) {
-    console.error('Error while creating an output');
+    console.error(err);
     process.exit(1);
   }
 
