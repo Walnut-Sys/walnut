@@ -1,0 +1,240 @@
+{
+	"localization": "en",
+	"colors": {
+		"whitePieces": "#c38748",
+		"blackPieces": "#150503",
+		"whiteSquares": "#f9c48d",
+		"blackSquares": "#84271d",
+		"border": "#a73a2f",
+		"symbols": "#efefef"
+	},
+	"whitePositions": [
+		{
+			"piece": "R",
+			"position": {
+				"x": 1,
+				"y": 1
+			}
+		},
+		{
+			"piece": "N",
+			"position": {
+				"x": 2,
+				"y": 1
+			}
+		},
+		{
+			"piece": "B",
+			"position": {
+				"x": 3,
+				"y": 1
+			}
+		},
+		{
+			"piece": "Q",
+			"position": {
+				"x": 4,
+				"y": 1
+			}
+		},
+		{
+			"piece": "K",
+			"position": {
+				"x": 5,
+				"y": 1
+			}
+		},
+		{
+			"piece": "B",
+			"position": {
+				"x": 6,
+				"y": 1
+			}
+		},
+		{
+			"piece": "N",
+			"position": {
+				"x": 7,
+				"y": 1
+			}
+		},
+		{
+			"piece": "R",
+			"position": {
+				"x": 8,
+				"y": 1
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 1,
+				"y": 2
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 2,
+				"y": 2
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 3,
+				"y": 4
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 4,
+				"y": 2
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 5,
+				"y": 2
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 6,
+				"y": 2
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 7,
+				"y": 2
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 8,
+				"y": 2
+			}
+		}
+	],
+	"blackPositions": [
+		{
+			"piece": "R",
+			"position": {
+				"x": 1,
+				"y": 8
+			}
+		},
+		{
+			"piece": "N",
+			"position": {
+				"x": 2,
+				"y": 8
+			}
+		},
+		{
+			"piece": "B",
+			"position": {
+				"x": 3,
+				"y": 8
+			}
+		},
+		{
+			"piece": "Q",
+			"position": {
+				"x": 4,
+				"y": 8
+			}
+		},
+		{
+			"piece": "K",
+			"position": {
+				"x": 5,
+				"y": 8
+			}
+		},
+		{
+			"piece": "B",
+			"position": {
+				"x": 6,
+				"y": 8
+			}
+		},
+		{
+			"piece": "N",
+			"position": {
+				"x": 7,
+				"y": 8
+			}
+		},
+		{
+			"piece": "R",
+			"position": {
+				"x": 8,
+				"y": 8
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 1,
+				"y": 7
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 2,
+				"y": 7
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 3,
+				"y": 7
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 4,
+				"y": 7
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 5,
+				"y": 7
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 6,
+				"y": 7
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 7,
+				"y": 7
+			}
+		},
+		{
+			"piece": "P",
+			"position": {
+				"x": 8,
+				"y": 7
+			}
+		}
+	],
+	"solution": []
+}
