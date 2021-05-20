@@ -1,5 +1,3 @@
-import { Readable } from 'stream';
-
 /**
  * If passed value is supported returns this value in standardized format.
  * Otherwise returns default value
@@ -18,17 +16,4 @@ export const standardizeValue = (value: any, supportedValues: any[], defaultValu
     }
   });
   return supportedValue ?? defaultValue;
-};
-
-/**
- * Converts readable stream into string
- * @param {Readable} stream
- * @return {Promise<string>}
- */
-export const streamToString = async (stream: Readable): Promise<string> => {
-  let result = '';
-  for await (const chunk of stream) {
-    result += chunk;
-  }
-  return result;
 };

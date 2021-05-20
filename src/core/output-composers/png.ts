@@ -6,13 +6,12 @@ import { fillSVGTemplate } from '../utils/svg';
 import ComposingError from '../errors/composing-error';
 
 export default class PNGComposer implements IOutputComposer {
-  public async compose(parserOutput: IParserOutput): Promise<Readable> {
-    const svgBuffer = await fillSVGTemplate(parserOutput);
-    console.log(svgBuffer.toString());
+  public async compose(parserOutput: IParserOutput): Promise<Buffer> {
     try {
-      const data = await sharp(svgBuffer).toFormat('png').toBuffer();
-      return Readable.from([data]);
-    } catch (error) {
+      const svgBuffer = await fillSVGTemplate(parserOutput);
+      return sharp(svgBuffer).png().toBuffer();
+    }
+    catch (error) {
       throw new ComposingError(`Error while composing png output: ${error}`);
     }
   }

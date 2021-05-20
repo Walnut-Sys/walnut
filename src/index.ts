@@ -11,7 +11,6 @@ import {
   WEBPComposer,
   XMLComposer
 } from './core/output-composers';
-import { streamToString } from './utils/helpers';
 import path from 'path';
 
 const outputComposers: { [key: string]: any } = {
@@ -127,7 +126,7 @@ const { argv } = yargs
   }
 
   try {
-    await fs.promises.writeFile(out, await streamToString(result));
+    await fs.promises.writeFile(out, result);
   } catch (err) {
     console.error('Error while writing result to specified file');
     console.error(err);

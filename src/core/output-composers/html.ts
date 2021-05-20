@@ -11,7 +11,7 @@ import { LOCALIZATIONS_DICTIONARY } from '../constants';
 const pathToTemplate = path.join(__dirname, '..', '..', '..', '..', 'assets', 'html-template.txt');
 
 export default class HTMLComposer implements IOutputComposer {
-  public async compose(parserOutput: IParserOutput): Promise<Readable> {
+  public async compose(parserOutput: IParserOutput): Promise<Buffer> {
     const htmlTemplate = (await fs.readFile(pathToTemplate)).toString();
     const composedHtml = htmlTemplate
       .replace('#BORDER_COLOR#', parserOutput.colors.border)
@@ -25,7 +25,8 @@ export default class HTMLComposer implements IOutputComposer {
         this.generateBoard(parserOutput.whitePositions, parserOutput.blackPositions)
       )
       .replace('#BOARD_LETTERS#', this.generateBoardLetters(parserOutput.localization));
-    return Readable.from([composedHtml]);
+
+    return Buffer.from(composedHtml);
   }
 
   // eslint-disable-next-line sonarjs/cognitive-complexity
