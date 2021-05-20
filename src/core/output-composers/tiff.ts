@@ -11,8 +11,8 @@ export default class TIFFComposer implements IOutputComposer {
       const svgBuffer = await fillSVGTemplate(parserOutput);
       return sharp(svgBuffer).tiff().resize(IMAGE_WIDTH, IMAGE_HEIGHT).toBuffer();
     }
-    catch (error) {
-      throw new ComposingError(`Error while composing TIFF output: ${error}`);
+    catch (err) {
+      throw new ComposingError(`Error while composing TIFF output: ${err.message}`);
     }
   }
 }

@@ -121,7 +121,7 @@ const { argv } = yargs
     const outputComposer = new outputComposers[selectedOutputType]();
     result = await outputComposer.compose(parserOutput);
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
     process.exit(1);
   }
 
@@ -129,7 +129,7 @@ const { argv } = yargs
     await fs.promises.writeFile(out, result);
   } catch (err) {
     console.error('Error while writing result to specified file');
-    console.error(err);
+    console.error(err.message);
     process.exit(1);
   }
 

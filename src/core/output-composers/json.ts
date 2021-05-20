@@ -9,8 +9,8 @@ export default class JSONComposer implements IOutputComposer {
         JSON.stringify(parserOutput, null, '\t')
       );
     }
-    catch (error) {
-      throw new ComposingError(`Error while composing JSON output: ${error}`);
+    catch (err) {
+      throw new ComposingError(`Error while composing JSON output: ${err.message}`);
     }
   }
 }

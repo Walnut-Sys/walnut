@@ -11,8 +11,8 @@ export default class WEBPComposer implements IOutputComposer {
       const svgBuffer = await fillSVGTemplate(parserOutput);
       return sharp(svgBuffer).webp().resize(IMAGE_WIDTH, IMAGE_HEIGHT).toBuffer();
     }
-    catch (error) {
-      throw new ComposingError(`Error while composing WEBP output: ${error}`);
+    catch (err) {
+      throw new ComposingError(`Error while composing WEBP output: ${err.message}`);
     }
   }
 }

@@ -11,8 +11,8 @@ export default class JPEGComposer implements IOutputComposer {
       const svgBuffer = await fillSVGTemplate(parserOutput);
       return sharp(svgBuffer).jpeg().resize(IMAGE_WIDTH, IMAGE_HEIGHT).toBuffer();
     }
-    catch (error) {
-      throw new ComposingError(`Error while composing JPEG output: ${error}`);
+    catch (err) {
+      throw new ComposingError(`Error while composing JPEG output: ${err.message}`);
     }
   }
 }
