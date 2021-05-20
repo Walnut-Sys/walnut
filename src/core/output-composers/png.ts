@@ -12,7 +12,7 @@ export default class PNGComposer implements IOutputComposer {
       return sharp(svgBuffer).png().resize(IMAGE_WIDTH, IMAGE_HEIGHT).toBuffer();
     }
     catch (error) {
-      throw new ComposingError(`Error while composing png output: ${error}`);
+      throw new ComposingError(`Error while composing PNG output: ${error}`);
     }
   }
 }
