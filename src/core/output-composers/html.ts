@@ -8,7 +8,7 @@ import { generatePiecesMap } from '../mappers/piece-declaration';
 import Localizations from '../enums/localizations';
 import { LOCALIZATIONS_DICTIONARY } from '../constants';
 
-const pathToTemplate = path.join(__dirname, '..', '..', '..', '..', 'assets', 'html-template.txt');
+const pathToTemplate = path.join(process.cwd(), 'assets', 'html-template.txt');
 
 export default class HTMLComposer implements IOutputComposer {
   public async compose(parserOutput: IParserOutput): Promise<Buffer> {
@@ -45,9 +45,6 @@ export default class HTMLComposer implements IOutputComposer {
 
         const whitePieceIfExists = whitePiecesMap.get(`${j + 1},${8 - i}`);
         const blackPieceIfExists = blackPiecesMap.get(`${j + 1},${8 - i}`);
-        if (whitePieceIfExists && blackPieceIfExists) {
-          throw new Error(`Two pieces on same square found.`);
-        }
 
         board += `\n\t<li class="square ${squareClass}">`;
         board += whitePieceIfExists

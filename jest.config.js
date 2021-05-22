@@ -6,5 +6,5 @@ module.exports = {
   },
   transformIgnorePatterns: ['node_modules/(?!variables/.*)'],
   coverageDirectory: './coverage/',
-  collectCoverage: true
+  collectCoverage: true,
 };

@@ -7,15 +7,7 @@ import { LOCALIZATIONS_DICTIONARY } from '../constants';
 import IPieceDeclaration from '../interfaces/piece-declaration';
 
 export const fillSVGTemplate = async (parserOutput: IParserOutput): Promise<Buffer> => {
-  const pathToTemplate = path.resolve(
-    __dirname,
-    '..',
-    '..',
-    '..',
-    '..',
-    'assets',
-    'svg-template.svg'
-  );
+  const pathToTemplate = path.resolve(process.cwd(), 'assets', 'svg-template.svg');
   const svgTemplate = (await fs.readFile(pathToTemplate)).toString();
   let composedSvg = svgTemplate
     .replace('<!--BORDER_COLOR-->', parserOutput.colors.border)
