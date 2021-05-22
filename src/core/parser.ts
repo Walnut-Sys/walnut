@@ -7,12 +7,7 @@ import IPieceDeclaration from './interfaces/piece-declaration';
 import ParsingError from './errors/parsing-error';
 
 import { standardizeValue } from '../utils/helpers';
-import {
-  SUPPORTED_LOCALIZATIONS,
-  DEFAULT_COLORS,
-  LOCALIZATIONS_DICTIONARY,
-  DEFAULT_LOCALIZATION
-} from './constants';
+import { SUPPORTED_LOCALIZATIONS, DEFAULT_COLORS, LOCALIZATIONS_DICTIONARY, DEFAULT_LOCALIZATION } from './constants';
 
 export default class Parser implements IParser {
   /**
@@ -30,9 +25,7 @@ export default class Parser implements IParser {
       localization
     });
 
-    if (!whitePositions.length && !blackPositions.length) {
-      throw new ParsingError('Invalid pieces positions declaration');
-    }
+    this.validatePiecesDeclarations([...whitePositions, ...blackPositions]);
 
     return {
       localization,
@@ -164,5 +157,30 @@ export default class Parser implements IParser {
       });
       return acc;
     }, []);
+  }
+
+  /**
+   * Validates array of pieces declarations
+   * @param {IPieceDeclaration[]} declarations
+   * @private
+   */
+  private validatePiecesDeclarations(declarations: IPieceDeclaration[]): void {
+    if (!declarations.length) {
+      throw new ParsingError('You need to declare pieces positions');
+    }
+
+    if (declarations.length > 32) {
+      throw new ParsingError('You can\'t place more than 32 pieces on the board');
+    }
+
+    const coords = new Set();
+
+    for (const { position } of declarations) {
+      const positionString = [position.x, position.y].join(';');
+      if (coords.has(positionString)) {
+        throw new ParsingError('You can\'t place two pieces on the same position');
+      }
+      coords.add(positionString);
+    }
   }
 }

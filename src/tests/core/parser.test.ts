@@ -469,5 +469,31 @@ COLORS:
         parser.parse(sourceCode);
       }).toThrow(ParsingError);
     });
+
+    test('Throws ParsingError when more than 32 pieces declared', () => {
+      const sourceCode = `
+WHITE POS: Ra1,Nb1,Bc1,Qd1,Ke1,Bf1,Ng1,Rh1,a2,b2,c4,d2,e2,f2,g2,h2
+BLACK POS: Ra8,Nb8,Bc8,Qd8,Ke8,Bf8,Ng8,Rh8,a7,b7,c7,d7,e7,f7,g7,h7,Ne5
+      `;
+
+      const parser = new Parser();
+
+      expect(() => {
+        parser.parse(sourceCode);
+      }).toThrow(ParsingError);
+    });
+
+    test('Throws ParsingError when more than one piece declared in the same square', () => {
+      const sourceCode = `
+WHITE POS: Ra1
+BLACK POS: Ra1,Nb8
+      `;
+
+      const parser = new Parser();
+
+      expect(() => {
+        parser.parse(sourceCode);
+      }).toThrow(ParsingError);
+    });
   });
 });
