@@ -4,5 +4,7 @@ module.exports = {
   transform: {
     'node_modules/variables/.+\\.(j|t)sx?$': 'ts-jest'
   },
-  transformIgnorePatterns: ['node_modules/(?!variables/.*)']
+  transformIgnorePatterns: ['node_modules/(?!variables/.*)'],
+  coverageDirectory: './coverage/',
+  collectCoverage: true
 };
