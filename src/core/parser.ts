@@ -30,6 +30,10 @@ export default class Parser implements IParser {
       localization
     });
 
+    if (!whitePositions.length && !blackPositions.length) {
+      throw new ParsingError('Invalid pieces positions declaration');
+    }
+
     return {
       localization,
       colors,
@@ -46,7 +50,7 @@ export default class Parser implements IParser {
    * @return {string}
    * @private
    */
-  private parseLocalization(sourceCode: string): Localizations {
+  public parseLocalization(sourceCode: string): Localizations {
     const match = sourceCode.match(/LOCALIZATION\s*:\s*(\S+)/i);
     const value = match ? match[1] : null;
     return standardizeValue(value, SUPPORTED_LOCALIZATIONS, DEFAULT_LOCALIZATION);
@@ -59,7 +63,7 @@ export default class Parser implements IParser {
    * @return {string}
    * @private
    */
-  private parseColors(sourceCode: string): IParserOutputColors {
+  public parseColors(sourceCode: string): IParserOutputColors {
     const match = sourceCode.match(/COLORS\s*:\s*\r?\n(([\t\s+]+.*(\r?\n?)*)+)/i);
     if (!match) {
       return DEFAULT_COLORS;
@@ -74,7 +78,7 @@ export default class Parser implements IParser {
       symbols: 'symbols'
     };
 
-    const lines = match[1].split(/\r?\n/).filter((line) => line !== '');
+    const lines = match[1].split(/\r?\n/).filter((line) => line.trim() !== '');
 
     return lines.reduce((acc, line) => {
       const match = line.match(
@@ -106,21 +110,22 @@ export default class Parser implements IParser {
    * @return {string}
    * @private
    */
-  private parsePiecesDeclarations(
+  public parsePiecesDeclarations(
     sourceCode: string,
     pieceColor: PieceColor,
     { localization }: { localization: Localizations }
   ): IPieceDeclaration[] {
     const match = sourceCode.match(
-      new RegExp(`${pieceColor} POS\\s*:\\s*([a-zA-Zа-яА-Я\\s\\d,]+)\r?\n`, 'i')
+      new RegExp(`${pieceColor} POS\\s*:\\s*([a-zA-Zа-яА-Я\\s\\d,]+)\r?\n?`, 'i')
     );
 
     if (!match) {
-      throw new ParsingError('Invalid pieces positions declaration');
+      return [];
     }
 
     const piecesSeparator = ',';
     const rawPieces = match[1]
+      .split(/\r?\n/)[0]
       .split(piecesSeparator)
       .map((str) => str.trim())
       .filter((str) => str);
@@ -128,7 +133,7 @@ export default class Parser implements IParser {
     return rawPieces.reduce((acc: IPieceDeclaration[], rawPiece) => {
       const y = +rawPiece[rawPiece.length - 1];
 
-      if (isNaN(y) || (y < 1 && y > 8)) {
+      if (isNaN(y) || y < 1 || y > 8) {
         throw new ParsingError(
           `Invalid piece declaration "${rawPiece}". Second coordinate must be a number between 1 and 8`
         );
