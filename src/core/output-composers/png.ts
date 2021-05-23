@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/prefer-immediate-return */
 import sharp from 'sharp';
 import IOutputComposer from '../interfaces/output-composer';
 import IParserOutput from '../interfaces/parser-output';
@@ -9,9 +10,9 @@ export default class PNGComposer implements IOutputComposer {
   public async compose(parserOutput: IParserOutput): Promise<Buffer> {
     try {
       const svgBuffer = await fillSVGTemplate(parserOutput);
-      return sharp(svgBuffer).png().resize(IMAGE_WIDTH, IMAGE_HEIGHT).toBuffer();
-    }
-    catch (err) {
+      const resBuffer = await sharp(svgBuffer).png().resize(IMAGE_WIDTH, IMAGE_HEIGHT).toBuffer();
+      return resBuffer;
+    } catch (err) {
       throw new ComposingError(`Error while composing PNG output: ${err.message}`);
     }
   }

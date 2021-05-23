@@ -1,10 +1,7 @@
 import crypto from 'crypto';
 import * as composers from '../../core/output-composers';
 import ComposingError from '../../core/errors/composing-error';
-import Localizations from '../../core/enums/localizations';
-import Pieces from '../../core/enums/pieces';
-import fs from 'fs';
-import path from 'path';
+import parserOutputMock from './default-parser-output';
 
 const checkSum = (data: any, algorithm?: string): string => {
   return crypto
@@ -15,60 +12,57 @@ const checkSum = (data: any, algorithm?: string): string => {
 
 describe('Output composers', () => {
   describe('HTML composer', () => {
-    test('with valid input', async () => {
+    test('HTML composer with valid input', async () => {
       const htmlComposer = new composers.HTMLComposer();
-      const parserOutput = {
-        localization: Localizations.EN,
-        colors: {
-          whitePieces: '#c38748',
-          blackPieces: '#150503',
-          whiteSquares: '#f9c48d',
-          blackSquares: '#84271d',
-          border: '#a73a2f',
-          symbols: '#efefef'
-        },
-        whitePositions: [
-          { piece: Pieces.Rook, position: { x: 1, y: 1 } },
-          { piece: Pieces.Knight, position: { x: 2, y: 1 } },
-          { piece: Pieces.Bishop, position: { x: 3, y: 1 } },
-          { piece: Pieces.Queen, position: { x: 4, y: 1 } },
-          { piece: Pieces.King, position: { x: 5, y: 1 } },
-          { piece: Pieces.Bishop, position: { x: 6, y: 1 } },
-          { piece: Pieces.Knight, position: { x: 7, y: 1 } },
-          { piece: Pieces.Rook, position: { x: 8, y: 1 } },
-          { piece: Pieces.Pawn, position: { x: 1, y: 2 } },
-          { piece: Pieces.Pawn, position: { x: 2, y: 2 } },
-          { piece: Pieces.Pawn, position: { x: 3, y: 4 } },
-          { piece: Pieces.Pawn, position: { x: 4, y: 2 } },
-          { piece: Pieces.Pawn, position: { x: 5, y: 2 } },
-          { piece: Pieces.Pawn, position: { x: 6, y: 2 } },
-          { piece: Pieces.Pawn, position: { x: 7, y: 2 } },
-          { piece: Pieces.Pawn, position: { x: 8, y: 2 } }
-        ],
-        blackPositions: [
-          { piece: Pieces.Rook, position: { x: 1, y: 8 } },
-          { piece: Pieces.Knight, position: { x: 2, y: 8 } },
-          { piece: Pieces.Bishop, position: { x: 3, y: 8 } },
-          { piece: Pieces.Queen, position: { x: 4, y: 8 } },
-          { piece: Pieces.King, position: { x: 5, y: 8 } },
-          { piece: Pieces.Bishop, position: { x: 6, y: 8 } },
-          { piece: Pieces.Knight, position: { x: 7, y: 8 } },
-          { piece: Pieces.Rook, position: { x: 8, y: 8 } },
-          { piece: Pieces.Pawn, position: { x: 1, y: 7 } },
-          { piece: Pieces.Pawn, position: { x: 2, y: 7 } },
-          { piece: Pieces.Pawn, position: { x: 3, y: 7 } },
-          { piece: Pieces.Pawn, position: { x: 4, y: 7 } },
-          { piece: Pieces.Pawn, position: { x: 5, y: 7 } },
-          { piece: Pieces.Pawn, position: { x: 6, y: 7 } },
-          { piece: Pieces.Pawn, position: { x: 7, y: 7 } },
-          { piece: Pieces.Pawn, position: { x: 8, y: 7 } }
-        ],
-        solution: []
-      };
       const expectedCheckSum = 'c4b8aa5d80657d9c07d6abcf0e7b3676';
-      const htmlBuffer = await htmlComposer.compose(parserOutput);
-      const receivedChecSum = checkSum(htmlBuffer.toString());
-      expect(receivedChecSum).toEqual(expectedCheckSum);
+      const htmlBuffer = await htmlComposer.compose(parserOutputMock);
+      const receivedCheckSum = checkSum(htmlBuffer.toString());
+      expect(receivedCheckSum).toEqual(expectedCheckSum);
+    });
+  });
+  describe('PNG composer', () => {
+    test('PNG composer with valid input', async () => {
+      const pngComposer = new composers.PNGComposer();
+      const expectedCheckSum = 'ce3d4255fcf19e21ec3af78cba76df0c';
+      const pngBuffer = await pngComposer.compose(parserOutputMock);
+      const receivedCheckSum = checkSum(pngBuffer.toString());
+      expect(receivedCheckSum).toEqual(expectedCheckSum);
+    });
+  });
+  describe('JPEG composer', () => {
+    test('JPEG composer with valid input', async () => {
+      const jpegComposer = new composers.JPEGComposer();
+      const expectedCheckSum = '8bbec4bfdee9aa2a9749cc1eb60a2803';
+      const jpegBuffer = await jpegComposer.compose(parserOutputMock);
+      const receivedCheckSum = checkSum(jpegBuffer.toString());
+      expect(receivedCheckSum).toEqual(expectedCheckSum);
+    });
+  });
+  describe('WEBP composer', () => {
+    test('WEBP composer with valid input', async () => {
+      const webpComposer = new composers.WEBPComposer();
+      const expectedCheckSum = 'eb51044567e7cb9a17cd446cc22959a0';
+      const webpBuffer = await webpComposer.compose(parserOutputMock);
+      const receivedCheckSum = checkSum(webpBuffer.toString());
+      expect(expectedCheckSum).toEqual(receivedCheckSum);
+    });
+  });
+  describe('TIFF composer', () => {
+    test('TIFF composer with valid input', async () => {
+      const tiffComposer = new composers.TIFFComposer();
+      const expectedCheckSum = '7f95ef59c470ec7804ac658496d84af0';
+      const tiffBuffer = await tiffComposer.compose(parserOutputMock);
+      const receivedCheckSum = checkSum(tiffBuffer.toString());
+      expect(receivedCheckSum).toEqual(expectedCheckSum);
+    });
+  });
+  describe('JSON composer', () => {
+    test('JSON composer with valid input', async () => {
+      const jsonComposer = new composers.JSONComposer();
+      const expectedCheckSum = 'ac8f95a61c3db79280b3c1179f430993';
+      const jsonBuffer = await jsonComposer.compose(parserOutputMock);
+      const receivedCheckSum = checkSum(jsonBuffer.toString());
+      expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
   });
 });
