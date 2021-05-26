@@ -2,7 +2,6 @@
 import fs from 'fs';
 import yargs from 'yargs';
 import Parser from './core/parser';
-import 'module-alias/register';
 import {
   HTMLComposer,
   JPEGComposer,

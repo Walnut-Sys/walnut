@@ -1,6 +1,7 @@
 import crypto from 'crypto';
 import * as composers from '../../core/output-composers';
 import parserOutputMock from './default-parser-output';
+import fs from 'fs';
 
 const checkSum = (data: any, algorithm?: string): string => {
   return crypto
@@ -15,6 +16,7 @@ describe('Output composers', () => {
       const htmlComposer = new composers.HTMLComposer();
       const expectedCheckSum = 'c4b8aa5d80657d9c07d6abcf0e7b3676';
       const htmlBuffer = await htmlComposer.compose(parserOutputMock);
+      await fs.promises.writeFile('./output.html', htmlBuffer);
       const receivedCheckSum = checkSum(htmlBuffer.toString());
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
