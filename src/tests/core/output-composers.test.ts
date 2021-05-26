@@ -1,6 +1,5 @@
 import crypto from 'crypto';
 import * as composers from '../../core/output-composers';
-import ComposingError from '../../core/errors/composing-error';
 import parserOutputMock from './default-parser-output';
 
 const checkSum = (data: any, algorithm?: string): string => {
@@ -62,6 +61,15 @@ describe('Output composers', () => {
       const expectedCheckSum = 'ac8f95a61c3db79280b3c1179f430993';
       const jsonBuffer = await jsonComposer.compose(parserOutputMock);
       const receivedCheckSum = checkSum(jsonBuffer.toString());
+      expect(receivedCheckSum).toEqual(expectedCheckSum);
+    });
+  });
+  describe('XML composer', () => {
+    test('XML composer with valid input', async () => {
+      const xmlComposer = new composers.XMLComposer();
+      const expectedCheckSum = 'e6a45a7fac5725b2a493bfe0c4e51207';
+      const xmlBuffer = await xmlComposer.compose(parserOutputMock);
+      const receivedCheckSum = checkSum(xmlBuffer.toString());
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
   });

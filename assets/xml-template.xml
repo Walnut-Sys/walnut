@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <localization>#LOCALIZATION#</localization>
+  <colors>
+    <whitePieces>#WHITE_PIECE_COLOR#</whitePieces>
+    <blackPieces>#BLACK_PIECE_COLOR#</blackPieces>
+    <whiteSquares>#WHITE_SQUARE_COLOR#</whiteSquares>
+    <blackSquares>#BLACK_SQUARE_COLOR#</blackSquares>
+    <border>#BORDER_COLOR#</border>
+    <symbols>#SYMBOLS_COLOR#</symbols>
+  </colors>
+  <whitePositions>#WHITE_POSITIONS#
+  </whitePositions>
+  <blackPositions>#BLACK_POSITIONS#
+  </blackPositions>
+</roor>

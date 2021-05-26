@@ -1,18 +1,23 @@
 import path from 'path';
 import { promises as fs } from 'fs';
-import { Readable } from 'stream';
 import IOutputComposer from '../interfaces/output-composer';
 import IParserOutput from '../interfaces/parser-output';
 import IPieceDeclaration from '../interfaces/piece-declaration';
 import { generatePiecesMap } from '../mappers/piece-declaration';
 import Localizations from '../enums/localizations';
 import { LOCALIZATIONS_DICTIONARY } from '../constants';
+import ComposingError from '../errors/composing-error';
 
-const pathToTemplate = path.join(process.cwd(), 'assets', 'html-template.txt');
+const pathToTemplate = path.join(process.cwd(), 'assets', 'html-template.html');
 
 export default class HTMLComposer implements IOutputComposer {
   public async compose(parserOutput: IParserOutput): Promise<Buffer> {
-    const htmlTemplate = (await fs.readFile(pathToTemplate)).toString();
+    let htmlTemplate;
+    try {
+      htmlTemplate = (await fs.readFile(pathToTemplate)).toString();
+    } catch (err) {
+      throw new ComposingError(`Error while fetching template: ${err}`);
+    }
     const composedHtml = htmlTemplate
       .replace('#BORDER_COLOR#', parserOutput.colors.border)
       .replace('#BLACK_SQUARE_COLOR#', parserOutput.colors.blackSquares)
