@@ -33,6 +33,7 @@
   "homepage": "https://github.com/Walnut-Sys/walnut#readme",
   "devDependencies": {
     "@types/jest": "^26.0.21",
+    "@types/sharp": "^0.28.1",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "eslint": "^7.21.0",
@@ -47,7 +48,6 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "@types/sharp": "^0.28.1",
     "sharp": "^0.28.2",
     "yargs": "^17.0.1"
   }

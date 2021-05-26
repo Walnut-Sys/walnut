@@ -1,3 +1,5 @@
+import crypto from 'crypto';
+
 /**
  * If passed value is supported returns this value in standardized format.
  * Otherwise returns default value
@@ -16,4 +18,11 @@ export const standardizeValue = (value: any, supportedValues: any[], defaultValu
     }
   });
   return supportedValue ?? defaultValue;
+};
+
+export const generateCheckSum = (data: any, algorithm?: string): string => {
+  return crypto
+    .createHash(algorithm || 'md5')
+    .update(data, 'utf-8')
+    .digest('hex');
 };

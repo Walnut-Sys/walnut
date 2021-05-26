@@ -1,9 +1,9 @@
-import Parser from '../../core/parser';
-import Localizations from '../../core/enums/localizations';
-import PieceColor from '../../core/enums/piece-color';
-import Pieces from '../../core/enums/pieces';
-import ParsingError from '../../core/errors/parsing-error';
-import { DEFAULT_LOCALIZATION, DEFAULT_COLORS } from '../../core/constants';
+import Parser from '../../../core/parser';
+import Localizations from '../../../core/enums/localizations';
+import PieceColor from '../../../core/enums/piece-color';
+import Pieces from '../../../core/enums/pieces';
+import ParsingError from '../../../core/errors/parsing-error';
+import { DEFAULT_LOCALIZATION, DEFAULT_COLORS } from '../../../core/constants';
 
 describe('Parser', () => {
   describe('Localization parsing', () => {

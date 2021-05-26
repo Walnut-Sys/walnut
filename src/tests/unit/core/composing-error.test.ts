@@ -1,8 +1,8 @@
-import * as composers from '../../core/output-composers';
-import ComposingError from '../../core/errors/composing-error';
-import parserOutputMock from './default-parser-output';
+import * as composers from '../../../core/output-composers';
+import ComposingError from '../../../core/errors/composing-error';
+import parserOutputMock from '../../fixtures/default-parser-output';
 
-jest.mock('../../core/utils/svg');
+jest.mock('../../../core/utils/svg');
 
 describe('Composing errors in output composers', () => {
   describe('PNG composer', () => {
