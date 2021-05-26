@@ -20,9 +20,13 @@ export const standardizeValue = (value: any, supportedValues: any[], defaultValu
   return supportedValue ?? defaultValue;
 };
 
-export const generateCheckSum = (data: any, algorithm?: string): string => {
+export const generateCheckSum = (data: any, {
+  algorithm = 'md5',
+  inputEncoding = 'utf-8' as crypto.Encoding,
+  outputEncoding = 'hex' as crypto.BinaryToTextEncoding
+} = {}): string => {
   return crypto
-    .createHash(algorithm || 'md5')
-    .update(data, 'utf-8')
-    .digest('hex');
+    .createHash(algorithm)
+    .update(data, inputEncoding)
+    .digest(outputEncoding);
 };

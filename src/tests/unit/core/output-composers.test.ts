@@ -25,13 +25,15 @@ describe('Output composers', () => {
     test('PNG composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: 'ce3d4255fcf19e21ec3af78cba76df0c',
-        linux: '4318bd56b45260a349797b16dbb49aa8'
+        linux: '10d5c5b3ae92308873a5da3b7df6541e'
       };
 
       const pngComposer = new composers.PNGComposer();
       const pngBuffer = await pngComposer.compose(parserOutputMock);
 
-      const receivedCheckSum = generateCheckSum(pngBuffer.toString());
+      const receivedCheckSum = generateCheckSum(pngBuffer.toString(), {
+        inputEncoding: 'binary'
+      });
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
@@ -40,13 +42,15 @@ describe('Output composers', () => {
     test('JPEG composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: '8bbec4bfdee9aa2a9749cc1eb60a2803',
-        linux: '0978e66c3543423e9f722aa7d6925b30'
+        linux: '6e625727177a48e2788a45dfb8691255'
       };
 
       const jpegComposer = new composers.JPEGComposer();
       const jpegBuffer = await jpegComposer.compose(parserOutputMock);
 
-      const receivedCheckSum = generateCheckSum(jpegBuffer.toString());
+      const receivedCheckSum = generateCheckSum(jpegBuffer.toString(), {
+        inputEncoding: 'binary'
+      });
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
@@ -55,13 +59,15 @@ describe('Output composers', () => {
     test('WEBP composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: 'eb51044567e7cb9a17cd446cc22959a0',
-        linux: '1f92324554b7fd224816ab9094636c5e'
+        linux: '76b27fc080154e510856042553675914'
       };
 
       const webpComposer = new composers.WEBPComposer();
       const webpBuffer = await webpComposer.compose(parserOutputMock);
 
-      const receivedCheckSum = generateCheckSum(webpBuffer.toString());
+      const receivedCheckSum = generateCheckSum(webpBuffer.toString(), {
+        inputEncoding: 'binary'
+      });
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
@@ -70,13 +76,15 @@ describe('Output composers', () => {
     test('TIFF composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: '7f95ef59c470ec7804ac658496d84af0',
-        linux: 'dcef00e844cc24d6b8d793f098d55bc7'
+        linux: 'edf52fd8ce672b4b51ebfe542f6c24a7'
       };
 
       const tiffComposer = new composers.TIFFComposer();
       const tiffBuffer = await tiffComposer.compose(parserOutputMock);
 
-      const receivedCheckSum = generateCheckSum(tiffBuffer.toString());
+      const receivedCheckSum = generateCheckSum(tiffBuffer.toString(), {
+        inputEncoding: 'binary'
+      });
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
