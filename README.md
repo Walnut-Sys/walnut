@@ -1,5 +1,8 @@
 ## 🌰 Walnut - DSL для генерации шахматных карточек с задачами
 
+[![Build Status](https://travis-ci.com/Walnut-Sys/walnut.svg?branch=main)](https://travis-ci.com/Walnut-Sys/walnut)
+[![codecov](https://codecov.io/gh/Walnut-Sys/walnut/branch/main/graph/badge.svg?token=YueOCxQelG)](https://codecov.io/gh/Walnut-Sys/walnut)
+
 <u>Целевая аудитория:</u>
 
 - Тематические сайты и блоги по шахматам

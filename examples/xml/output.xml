@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <localization>en</localization>
+  <colors>
+    <whitePieces>#c38748</whitePieces>
+    <blackPieces>#150503</blackPieces>
+    <whiteSquares>#f9c48d</whiteSquares>
+    <blackSquares>#84271d</blackSquares>
+    <border>#a73a2f</border>
+    <symbols>#efefef</symbols>
+  </colors>
+  <whitePositions>
+    <item>
+      <piece>R</piece>
+      <position>
+        <x number="true">1</x>
+        <y number="true">1</y>
+      </position>
+    </item>
+    <item>
+      <piece>N</piece>
+      <position>
+        <x number="true">2</x>
+        <y number="true">1</y>
+      </position>
+    </item>
+    <item>
+      <piece>B</piece>
+      <position>
+        <x number="true">3</x>
+        <y number="true">1</y>
+      </position>
+    </item>
+    <item>
+      <piece>Q</piece>
+      <position>
+        <x number="true">4</x>
+        <y number="true">1</y>
+      </position>
+    </item>
+    <item>
+      <piece>K</piece>
+      <position>
+        <x number="true">5</x>
+        <y number="true">1</y>
+      </position>
+    </item>
+    <item>
+      <piece>B</piece>
+      <position>
+        <x number="true">6</x>
+        <y number="true">1</y>
+      </position>
+    </item>
+    <item>
+      <piece>N</piece>
+      <position>
+        <x number="true">7</x>
+        <y number="true">1</y>
+      </position>
+    </item>
+    <item>
+      <piece>R</piece>
+      <position>
+        <x number="true">8</x>
+        <y number="true">1</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">1</x>
+        <y number="true">2</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">2</x>
+        <y number="true">2</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">3</x>
+        <y number="true">4</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">4</x>
+        <y number="true">2</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">5</x>
+        <y number="true">2</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">6</x>
+        <y number="true">2</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">7</x>
+        <y number="true">2</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">8</x>
+        <y number="true">2</y>
+      </position>
+    </item>
+  </whitePositions>
+  <blackPositions>
+    <item>
+      <piece>R</piece>
+      <position>
+        <x number="true">1</x>
+        <y number="true">8</y>
+      </position>
+    </item>
+    <item>
+      <piece>N</piece>
+      <position>
+        <x number="true">2</x>
+        <y number="true">8</y>
+      </position>
+    </item>
+    <item>
+      <piece>B</piece>
+      <position>
+        <x number="true">3</x>
+        <y number="true">8</y>
+      </position>
+    </item>
+    <item>
+      <piece>Q</piece>
+      <position>
+        <x number="true">4</x>
+        <y number="true">8</y>
+      </position>
+    </item>
+    <item>
+      <piece>K</piece>
+      <position>
+        <x number="true">5</x>
+        <y number="true">8</y>
+      </position>
+    </item>
+    <item>
+      <piece>B</piece>
+      <position>
+        <x number="true">6</x>
+        <y number="true">8</y>
+      </position>
+    </item>
+    <item>
+      <piece>N</piece>
+      <position>
+        <x number="true">7</x>
+        <y number="true">8</y>
+      </position>
+    </item>
+    <item>
+      <piece>R</piece>
+      <position>
+        <x number="true">8</x>
+        <y number="true">8</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">1</x>
+        <y number="true">7</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">2</x>
+        <y number="true">7</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">3</x>
+        <y number="true">7</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">4</x>
+        <y number="true">7</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">5</x>
+        <y number="true">7</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">6</x>
+        <y number="true">7</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">7</x>
+        <y number="true">7</y>
+      </position>
+    </item>
+    <item>
+      <piece>P</piece>
+      <position>
+        <x number="true">8</x>
+        <y number="true">7</y>
+      </position>
+    </item>
+  </blackPositions>
+</roor>

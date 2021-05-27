@@ -58,3 +58,6 @@ export const DEFAULT_COLORS: IParserOutputColors = {
   border: '#a73a2f',
   symbols: '#efefef'
 };
+
+export const IMAGE_WIDTH = 2560;
+export const IMAGE_HEIGHT = 2560;
