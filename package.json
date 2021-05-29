@@ -1,5 +1,5 @@
 {
-  "name": "walnut",
+  "name": "walnut-chess",
   "version": "0.1.0",
   "description": "DSL for generating chess problem cards",
   "main": "lib/cjs/index.js",
