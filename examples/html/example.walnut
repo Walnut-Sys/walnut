@@ -9,9 +9,3 @@ COLORS:
 
 WHITE POS: Ra1,Nb1,Bc1,Qd1,Ke1,Bf1,Ng1,Rh1,a2,b2,c4,d2,e2,f2,g2,h2
 BLACK POS: Ra8,Nb8,Bc8,Qd8,Ke8,Bf8,Ng8,Rh8,a7,b7,c7,d7,e7,f7,g7,h7
-
-SOLVE:
-    1. e2-e4 e7-e5
-    2. Сf1-c4 Кb8-c6
-    3. Фd1-h5 Кg8-f6
-    4. Фh5xf7#
