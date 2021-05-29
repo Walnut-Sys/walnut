@@ -7,7 +7,12 @@ import IPieceDeclaration from './interfaces/piece-declaration';
 import ParsingError from './errors/parsing-error';
 
 import { standardizeValue } from '../utils/helpers';
-import { SUPPORTED_LOCALIZATIONS, DEFAULT_COLORS, LOCALIZATIONS_DICTIONARY, DEFAULT_LOCALIZATION } from './constants';
+import {
+  SUPPORTED_LOCALIZATIONS,
+  DEFAULT_COLORS,
+  LOCALIZATIONS_DICTIONARY,
+  DEFAULT_LOCALIZATION
+} from './constants';
 
 export default class Parser implements IParser {
   /**
@@ -170,7 +175,7 @@ export default class Parser implements IParser {
     }
 
     if (declarations.length > 32) {
-      throw new ParsingError('You can\'t place more than 32 pieces on the board');
+      throw new ParsingError("You can't place more than 32 pieces on the board");
     }
 
     const coords = new Set();
@@ -178,7 +183,7 @@ export default class Parser implements IParser {
     for (const { position } of declarations) {
       const positionString = [position.x, position.y].join(';');
       if (coords.has(positionString)) {
-        throw new ParsingError('You can\'t place two pieces on the same position');
+        throw new ParsingError("You can't place two pieces on the same position");
       }
       coords.add(positionString);
     }

@@ -9,3 +9,7 @@ script:
   - npm run build
   - npm test
   - codecov --token=$CODECOV_TOKEN
+deploy:
+  provider: npm
+  email: '$NPM_EMAIL'
+  api_key: '$NPM_TOKEN'

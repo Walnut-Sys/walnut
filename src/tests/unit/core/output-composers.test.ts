@@ -9,9 +9,9 @@ describe('Output composers', () => {
   describe('HTML composer', () => {
     test('HTML composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
-        win32: 'c4b8aa5d80657d9c07d6abcf0e7b3676',
-        darwin: 'eb7fd023cfdc891ca5e117b37c696015',
-        linux: 'eb7fd023cfdc891ca5e117b37c696015'
+        win32: '019b0cd21eaf19f9c0038f2011b0aec1',
+        darwin: '184bd5ef030e1de14acd021c23e52350',
+        linux: '184bd5ef030e1de14acd021c23e52350'
       };
 
       const htmlComposer = new composers.HTMLComposer();
@@ -105,15 +105,16 @@ describe('Output composers', () => {
   describe('XML composer', () => {
     test('XML composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
-        win32: 'e6a45a7fac5725b2a493bfe0c4e51207',
-        darwin: '5a18a14220323e8b5e2af5b7370a3e18',
-        linux: '5a18a14220323e8b5e2af5b7370a3e18'
+        win32: 'ba89bf5d28404ca6f1ff82d5cd75a477',
+        darwin: '2b41dcab4bc0b5cf155a4d8ff1e41f8e',
+        linux: '2b41dcab4bc0b5cf155a4d8ff1e41f8e'
       };
 
       const xmlComposer = new composers.XMLComposer();
       const xmlBuffer = await xmlComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(xmlBuffer.toString());
+      console.log(receivedCheckSum);
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });

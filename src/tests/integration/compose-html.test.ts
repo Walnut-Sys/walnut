@@ -8,8 +8,8 @@ type ExpectedCheckSums = { [key: string]: string };
 test('Composes correct html from source code', async () => {
   const expectedCheckSums: ExpectedCheckSums = {
     win32: 'c4b8aa5d80657d9c07d6abcf0e7b3676',
-    darwin: 'eb7fd023cfdc891ca5e117b37c696015',
-    linux: 'eb7fd023cfdc891ca5e117b37c696015'
+    darwin: '184bd5ef030e1de14acd021c23e52350',
+    linux: '184bd5ef030e1de14acd021c23e52350'
   };
 
   const sourceCode = `

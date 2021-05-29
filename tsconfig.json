@@ -10,7 +10,5 @@
     "inlineSourceMap": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": [
-    "src/**/__mocks__"
-  ]
+  "exclude": ["src/**/__mocks__"]
 }
