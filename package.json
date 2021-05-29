@@ -1,6 +1,6 @@
 {
   "name": "walnut",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "DSL for generating chess problem cards",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
