@@ -13,6 +13,17 @@ import {
 } from './core/output-composers';
 import path from 'path';
 
+export * as Parser from './core/parser';
+export {
+  HTMLComposer,
+  JPEGComposer,
+  PNGComposer,
+  JSONComposer,
+  TIFFComposer,
+  WEBPComposer,
+  XMLComposer
+} from './core/output-composers';
+
 const outputComposers: { [key: string]: any } = {
   html: HTMLComposer,
   jpeg: JPEGComposer,
