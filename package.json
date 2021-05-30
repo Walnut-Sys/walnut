@@ -25,6 +25,15 @@
     "type": "git",
     "url": "git+https://github.com/Walnut-Sys/walnut.git"
   },
+  "keywords": [
+    "chess",
+    "chess cards",
+    "chess problems",
+    "chess image generator",
+    "chess html",
+    "chess xml",
+    "dsl"
+  ],
   "author": "Vilen Kupriienko, Mykhailo Kosiuk",
   "license": "MIT",
   "bugs": {
