@@ -7,7 +7,7 @@ type ExpectedCheckSums = { [key: string]: string };
 
 test('Composes correct html from source code', async () => {
   const expectedCheckSums: ExpectedCheckSums = {
-    win32: 'c4b8aa5d80657d9c07d6abcf0e7b3676',
+    win32: 'b6c90529188fbcb69d7465434efe5474',
     darwin: '184bd5ef030e1de14acd021c23e52350',
     linux: '184bd5ef030e1de14acd021c23e52350'
   };

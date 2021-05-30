@@ -9,7 +9,7 @@ describe('Output composers', () => {
   describe('HTML composer', () => {
     test('HTML composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
-        win32: '019b0cd21eaf19f9c0038f2011b0aec1',
+        win32: 'b6c90529188fbcb69d7465434efe5474',
         darwin: '184bd5ef030e1de14acd021c23e52350',
         linux: '184bd5ef030e1de14acd021c23e52350'
       };
@@ -105,7 +105,7 @@ describe('Output composers', () => {
   describe('XML composer', () => {
     test('XML composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
-        win32: 'ba89bf5d28404ca6f1ff82d5cd75a477',
+        win32: '569c6199e79eacdba61fd2fc83424e1e',
         darwin: '2b41dcab4bc0b5cf155a4d8ff1e41f8e',
         linux: '2b41dcab4bc0b5cf155a4d8ff1e41f8e'
       };
