@@ -1,20 +1,9 @@
 #!/usr/bin/env node
 import fs from 'fs';
-import yargs from 'yargs';
-import Parser from './core/parser';
-import {
-  HTMLComposer,
-  JPEGComposer,
-  PNGComposer,
-  JSONComposer,
-  TIFFComposer,
-  WEBPComposer,
-  XMLComposer
-} from './core/output-composers';
 import path from 'path';
-
-export * as Parser from './core/parser';
-export {
+import yargs from 'yargs';
+import {
+  Parser,
   HTMLComposer,
   JPEGComposer,
   PNGComposer,
@@ -22,7 +11,7 @@ export {
   TIFFComposer,
   WEBPComposer,
   XMLComposer
-} from './core/output-composers';
+} from './core';
 
 const outputComposers: { [key: string]: any } = {
   html: HTMLComposer,
