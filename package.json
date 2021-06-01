@@ -1,10 +1,10 @@
 {
   "name": "walnut-chess",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "DSL for generating chess problem cards",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
-  "bin": "./lib/cjs/index.js",
+  "bin": "./lib/cjs/bin/index.js",
   "browser": "lib/cjs/index.js",
   "cdn": "lib/cjs/index.js",
   "unpkg": "lib/cjs/index.js",
