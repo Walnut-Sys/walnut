@@ -1,6 +1,6 @@
-import IParser from './core/interfaces/parser';
-import IParserOutput from './core/interfaces/parser-output';
-import IOutputComposer from './core/interfaces/output-composer';
+import IParser from './src/core/interfaces/parser';
+import IParserOutput from './src/core/interfaces/parser-output';
+import IOutputComposer from './src/core/interfaces/output-composer';
 
 declare module 'walnut-chess' {
   export class Parser implements IParser {
