@@ -20,6 +20,7 @@ module.exports = {
     indent: ['error', 2, { SwitchCase: 1 }],
     'sonarjs/cognitive-complexity': 'error',
     'sonarjs/no-identical-expressions': 'error',
+    'sonarjs/prefer-immediate-return': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/naming-convention': [
