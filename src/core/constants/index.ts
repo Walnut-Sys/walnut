@@ -59,5 +59,4 @@ export const DEFAULT_COLORS: IParserOutputColors = {
   symbols: '#efefef'
 };
 
-export const IMAGE_WIDTH = 2560;
-export const IMAGE_HEIGHT = 2560;
+export const IMAGE_SIZE = 2560;
