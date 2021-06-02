@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import yargs from 'yargs';
+import yargs, { number } from 'yargs';
+import Parser from './core/parser';
 import {
   Parser,
   HTMLComposer,
@@ -11,7 +12,7 @@ import {
   TIFFComposer,
   WEBPComposer,
   XMLComposer
-} from './core';
+} from './core/';
 
 const outputComposers: { [key: string]: any } = {
   html: HTMLComposer,
@@ -38,6 +39,10 @@ const { argv } = yargs
     describe: 'Path to output file',
     type: 'string',
     demandOption: true
+  })
+  .option('size', {
+    describe: 'Size of board in pixels for graphical output types',
+    type: 'number'
   })
   .option('html', {
     describe: 'Transpile into HTML file',
@@ -68,7 +73,7 @@ const { argv } = yargs
     type: 'boolean'
   })
   .check((argv) => {
-    const { source } = argv as { [key: string]: any };
+    const { source, size } = argv as { [key: string]: any };
 
     if (!fs.existsSync(source)) {
       throw new Error(`Invalid source code file specified`);
@@ -86,11 +91,15 @@ const { argv } = yargs
       throw new Error(`You must specify one of output options`);
     }
 
+    if (Number.isNaN(size) || size <= 0 || size > 8000) {
+      throw new Error(`Invalid size specified. Size must be a positive integer number under 8000`);
+    }
+
     return true;
   });
 
 (async () => {
-  const { source, out } = argv as { [key: string]: any };
+  const { source, out, size } = argv as { [key: string]: any };
   const selectedOutputType = supportedOutputOptions.find((option) => !!argv[option]);
 
   if (!selectedOutputType) process.exit(1);
@@ -115,11 +124,17 @@ const { argv } = yargs
     process.exit(1);
   }
 
+  const composerArgs = [parserOutput];
+
+  if (['png', 'tiff', 'webp', 'jpeg'].includes(selectedOutputType)) {
+    composerArgs.push(size);
+  }
+
   let result;
 
   try {
     const outputComposer = new outputComposers[selectedOutputType]();
-    result = await outputComposer.compose(parserOutput);
+    result = await outputComposer.compose(...composerArgs);
   } catch (err) {
     console.error(err.message);
     process.exit(1);
