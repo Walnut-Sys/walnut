@@ -6,7 +6,15 @@ import IParserOutput from '../interfaces/parser-output';
 import IPieceDeclaration from '../interfaces/piece-declaration';
 
 export default class XMLComposer implements IOutputComposer {
-  private pathToTemplate = path.join(__dirname, '..', '..', '..', '..', 'assets', 'html-template.html');
+  private pathToTemplate = path.join(
+    __dirname,
+    '..',
+    '..',
+    '..',
+    '..',
+    'assets',
+    'xml-template.xml'
+  );
 
   constructor(pathToTemplate?: string) {
     if (pathToTemplate) {

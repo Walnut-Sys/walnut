@@ -9,7 +9,15 @@ import { generatePiecesMap } from '../mappers/piece-declaration';
 import { LOCALIZATIONS_DICTIONARY } from '../constants';
 
 export default class HTMLComposer implements IOutputComposer {
-  private pathToTemplate = path.join(__dirname, '..', '..', '..', 'assets', 'html-template.html');
+  private pathToTemplate = path.join(
+    __dirname,
+    '..',
+    '..',
+    '..',
+    '..',
+    'assets',
+    'html-template.html'
+  );
 
   constructor(pathToTemplate?: string) {
     if (pathToTemplate) {

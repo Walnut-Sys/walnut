@@ -1,7 +1,12 @@
 import os from 'os';
+import path from 'path';
 import Parser from '../../core/parser';
 import { HTMLComposer } from '../../core/output-composers';
 import { generateCheckSum } from '../../utils/helpers';
+
+const pathsToTemplates = {
+  html: path.join(__dirname, '..', '..', '..', 'assets', 'html-template.html')
+};
 
 type ExpectedCheckSums = { [key: string]: string };
 
@@ -29,7 +34,7 @@ BLACK POS: Ra8,Nb8,Bc8,Qd8,Ke8,Bf8,Ng8,Rh8,a7,b7,c7,d7,e7,f7,g7,h7
   const parser = new Parser();
   const parserOutput = parser.parse(sourceCode);
 
-  const composer = new HTMLComposer();
+  const composer = new HTMLComposer(pathsToTemplates.html);
   const htmlBuffer = await composer.compose(parserOutput);
 
   const receivedCheckSum = generateCheckSum(htmlBuffer.toString());
