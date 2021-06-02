@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'fs';
-import yargs from 'yargs';
+import path from 'path';
+import yargs, { number } from 'yargs';
 import Parser from './core/parser';
 import {
   HTMLComposer,
@@ -11,7 +12,6 @@ import {
   WEBPComposer,
   XMLComposer
 } from './core/output-composers';
-import path from 'path';
 
 export * as Parser from './core/parser';
 export {
@@ -49,6 +49,10 @@ const { argv } = yargs
     describe: 'Path to output file',
     type: 'string',
     demandOption: true
+  })
+  .option('size', {
+    describe: 'Size of board in pixels for graphical output types',
+    type: 'number'
   })
   .option('html', {
     describe: 'Transpile into HTML file',
@@ -97,11 +101,17 @@ const { argv } = yargs
       throw new Error(`You must specify one of output options`);
     }
 
+    const { size } = argv as { [key: string]: any };
+
+    if (Number.isNaN(size) || size <= 0 || size > 8000) {
+      throw new Error(`Invalid size specified. Size must be a positive integer number under 8000`);
+    }
+
     return true;
   });
 
 (async () => {
-  const { source, out } = argv as { [key: string]: any };
+  const { source, out, size } = argv as { [key: string]: any };
   const selectedOutputType = supportedOutputOptions.find((option) => !!argv[option]);
 
   if (!selectedOutputType) process.exit(1);
@@ -126,11 +136,17 @@ const { argv } = yargs
     process.exit(1);
   }
 
+  const composerArgs = [parserOutput];
+
+  if (['png', 'tiff', 'webp', 'jpeg'].includes(selectedOutputType)) {
+    composerArgs.push(size);
+  }
+
   let result;
 
   try {
     const outputComposer = new outputComposers[selectedOutputType]();
-    result = await outputComposer.compose(parserOutput);
+    result = await outputComposer.compose(...composerArgs);
   } catch (err) {
     console.error(err.message);
     process.exit(1);
