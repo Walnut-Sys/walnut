@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import yargs, { number } from 'yargs';
-import Parser from './core/parser';
+import yargs from 'yargs';
 import {
   Parser,
   HTMLComposer,

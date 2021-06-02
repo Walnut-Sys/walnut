@@ -18,6 +18,7 @@ describe('Output composers', () => {
       const htmlBuffer = await htmlComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(htmlBuffer.toString());
+      console.log(receivedCheckSum);
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
@@ -26,7 +27,7 @@ describe('Output composers', () => {
     test('PNG composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: 'ce3d4255fcf19e21ec3af78cba76df0c',
-        darwin: '4318bd56b45260a349797b16dbb49aa8',
+        darwin: 'db9d1113dc5bf044c307bb89766dd36c',
         linux: '3ab0a9c8357caa01c2d81101957291c1'
       };
 
@@ -34,6 +35,7 @@ describe('Output composers', () => {
       const pngBuffer = await pngComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(pngBuffer.toString());
+      console.log(receivedCheckSum);
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
@@ -42,7 +44,7 @@ describe('Output composers', () => {
     test('JPEG composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: '8bbec4bfdee9aa2a9749cc1eb60a2803',
-        darwin: '0978e66c3543423e9f722aa7d6925b30',
+        darwin: 'e74d51e2ce1a101a31a0b9faebce8c20',
         linux: '92337e7074b55c5075e5330e2e260fe7'
       };
 
@@ -50,6 +52,7 @@ describe('Output composers', () => {
       const jpegBuffer = await jpegComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(jpegBuffer.toString());
+      console.log(receivedCheckSum);
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
@@ -58,7 +61,7 @@ describe('Output composers', () => {
     test('WEBP composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: 'eb51044567e7cb9a17cd446cc22959a0',
-        darwin: '1f92324554b7fd224816ab9094636c5e',
+        darwin: 'bb79d771895f936a1827762c19365155',
         linux: '15751710471d7a13df07e6c85ac1f2e1'
       };
 
@@ -66,6 +69,7 @@ describe('Output composers', () => {
       const webpBuffer = await webpComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(webpBuffer.toString());
+      console.log(receivedCheckSum);
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
@@ -74,7 +78,7 @@ describe('Output composers', () => {
     test('TIFF composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: '7f95ef59c470ec7804ac658496d84af0',
-        darwin: 'dcef00e844cc24d6b8d793f098d55bc7',
+        darwin: '1ae659c94efbbc5726beb545133a3927',
         linux: '5302104bd19f3323798c762dd4aa5a21'
       };
 
@@ -82,6 +86,7 @@ describe('Output composers', () => {
       const tiffBuffer = await tiffComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(tiffBuffer.toString());
+      console.log(receivedCheckSum);
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
@@ -98,6 +103,7 @@ describe('Output composers', () => {
       const jsonBuffer = await jsonComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(jsonBuffer.toString());
+      console.log(receivedCheckSum);
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });
