@@ -12,7 +12,7 @@ import {
   TIFFComposer,
   WEBPComposer,
   XMLComposer
-} from './core/';
+} from './core';
 
 const outputComposers: { [key: string]: any } = {
   html: HTMLComposer,
