@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import yargs, { number } from 'yargs';
-import Parser from './core/parser';
+import yargs from 'yargs';
+
 import {
+  Parser,
   HTMLComposer,
   JPEGComposer,
   PNGComposer,
@@ -11,7 +12,7 @@ import {
   TIFFComposer,
   WEBPComposer,
   XMLComposer
-} from './core';
+} from './core/';
 
 const outputComposers: { [key: string]: any } = {
   html: HTMLComposer,
@@ -72,7 +73,7 @@ const { argv } = yargs
     type: 'boolean'
   })
   .check((argv) => {
-    const { source } = argv as { [key: string]: any };
+    const { source, size } = argv as { [key: string]: any };
 
     if (!fs.existsSync(source)) {
       throw new Error(`Invalid source code file specified`);
@@ -89,8 +90,6 @@ const { argv } = yargs
     if (!selectedOutputTypes.length) {
       throw new Error(`You must specify one of output options`);
     }
-
-    const { size } = argv as { [key: string]: any };
 
     if (Number.isNaN(size) || size <= 0 || size > 8000) {
       throw new Error(`Invalid size specified. Size must be a positive integer number under 8000`);
