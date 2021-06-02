@@ -25,8 +25,8 @@ describe('Output composers', () => {
   describe('PNG composer', () => {
     test('PNG composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
-        win32: 'ce3d4255fcf19e21ec3af78cba76df0c',
-        darwin: '4318bd56b45260a349797b16dbb49aa8',
+        win32: '1a34353ccf36732b82e6a59e2f82364c',
+        darwin: 'db9d1113dc5bf044c307bb89766dd36c',
         linux: 'cb3613ef858302896874d3e89f747260'
       };
 
@@ -41,8 +41,8 @@ describe('Output composers', () => {
   describe('JPEG composer', () => {
     test('JPEG composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
-        win32: '8bbec4bfdee9aa2a9749cc1eb60a2803',
-        darwin: '0978e66c3543423e9f722aa7d6925b30',
+        win32: 'abcaf919c6d56e403d2abd88f211f6c4',
+        darwin: 'e74d51e2ce1a101a31a0b9faebce8c20',
         linux: 'b54db1eefa628723b8770bc0269bfbaa'
       };
 
@@ -57,8 +57,8 @@ describe('Output composers', () => {
   describe('WEBP composer', () => {
     test('WEBP composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
-        win32: 'eb51044567e7cb9a17cd446cc22959a0',
-        darwin: '1f92324554b7fd224816ab9094636c5e',
+        win32: 'bb532e634927906f21f13ae95af2d9ef',
+        darwin: 'bb79d771895f936a1827762c19365155',
         linux: '4cbb47575aa94a64a8484aa53e521174'
       };
 
@@ -73,8 +73,8 @@ describe('Output composers', () => {
   describe('TIFF composer', () => {
     test('TIFF composer with valid input', async () => {
       const expectedCheckSums: ExpectedCheckSums = {
-        win32: '7f95ef59c470ec7804ac658496d84af0',
-        darwin: 'dcef00e844cc24d6b8d793f098d55bc7',
+        win32: 'c17f4a3fec6b301edbd5011aef261dc1',
+        darwin: '1ae659c94efbbc5726beb545133a3927',
         linux: 'a9d1c054eda6d8464305ba70994d1a9b'
       };
 
@@ -114,7 +114,6 @@ describe('Output composers', () => {
       const xmlBuffer = await xmlComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(xmlBuffer.toString());
-      console.log(receivedCheckSum);
       const expectedCheckSum = expectedCheckSums[os.platform()] || expectedCheckSums.linux;
       expect(receivedCheckSum).toEqual(expectedCheckSum);
     });

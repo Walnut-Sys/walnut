@@ -1,13 +1,13 @@
 {
   "name": "walnut-chess",
-  "version": "0.1.0",
+  "version": "0.1.6",
   "description": "DSL for generating chess problem cards",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "bin": "./lib/cjs/index.js",
-  "browser": "lib/cjs/index.js",
-  "cdn": "lib/cjs/index.js",
-  "unpkg": "lib/cjs/index.js",
+  "browser": "lib/cjs/core/index.js",
+  "cdn": "lib/cjs/core/index.js",
+  "unpkg": "lib/cjs/core/index.js",
   "scripts": {
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
@@ -18,8 +18,8 @@
     "prepare": "husky install"
   },
   "exports": {
-    "require": "./lib/cjs",
-    "import": "./lib/esm"
+    "require": "./lib/cjs/core/index.js",
+    "import": "./lib/esm/core/index.js"
   },
   "repository": {
     "type": "git",
