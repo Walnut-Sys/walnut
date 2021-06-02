@@ -1,9 +1,16 @@
+import path from 'path';
 import os from 'os';
 import * as composers from '../../../core/output-composers';
 import parserOutputMock from '../../fixtures/default-parser-output';
 import { generateCheckSum } from '../../../utils/helpers';
 
 type ExpectedCheckSums = { [key: string]: string };
+
+const pathsToTemplates = {
+  html: path.join(__dirname, '..', '..', '..', '..', 'assets', 'html-template.html'),
+  xml: path.join(__dirname, '..', '..', '..', '..', 'assets', 'xml-template.xml'),
+  image: path.join(__dirname, '..', '..', '..', '..', 'assets', 'svg-template.svg')
+};
 
 describe('Output composers', () => {
   describe('HTML composer', () => {
@@ -14,7 +21,7 @@ describe('Output composers', () => {
         linux: '184bd5ef030e1de14acd021c23e52350'
       };
 
-      const htmlComposer = new composers.HTMLComposer();
+      const htmlComposer = new composers.HTMLComposer(pathsToTemplates.html);
       const htmlBuffer = await htmlComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(htmlBuffer.toString());
@@ -30,7 +37,7 @@ describe('Output composers', () => {
         linux: 'cb3613ef858302896874d3e89f747260'
       };
 
-      const pngComposer = new composers.PNGComposer();
+      const pngComposer = new composers.PNGComposer(pathsToTemplates.image);
       const pngBuffer = await pngComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(pngBuffer.toString());
@@ -46,7 +53,7 @@ describe('Output composers', () => {
         linux: 'b54db1eefa628723b8770bc0269bfbaa'
       };
 
-      const jpegComposer = new composers.JPEGComposer();
+      const jpegComposer = new composers.JPEGComposer(pathsToTemplates.image);
       const jpegBuffer = await jpegComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(jpegBuffer.toString());
@@ -62,7 +69,7 @@ describe('Output composers', () => {
         linux: '4cbb47575aa94a64a8484aa53e521174'
       };
 
-      const webpComposer = new composers.WEBPComposer();
+      const webpComposer = new composers.WEBPComposer(pathsToTemplates.image);
       const webpBuffer = await webpComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(webpBuffer.toString());
@@ -78,7 +85,7 @@ describe('Output composers', () => {
         linux: 'a9d1c054eda6d8464305ba70994d1a9b'
       };
 
-      const tiffComposer = new composers.TIFFComposer();
+      const tiffComposer = new composers.TIFFComposer(pathsToTemplates.image);
       const tiffBuffer = await tiffComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(tiffBuffer.toString());
@@ -110,7 +117,7 @@ describe('Output composers', () => {
         linux: '2b41dcab4bc0b5cf155a4d8ff1e41f8e'
       };
 
-      const xmlComposer = new composers.XMLComposer();
+      const xmlComposer = new composers.XMLComposer(pathsToTemplates.xml);
       const xmlBuffer = await xmlComposer.compose(parserOutputMock);
 
       const receivedCheckSum = generateCheckSum(xmlBuffer.toString());

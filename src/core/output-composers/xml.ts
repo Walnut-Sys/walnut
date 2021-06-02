@@ -5,13 +5,19 @@ import ComposingError from '../errors/composing-error';
 import IParserOutput from '../interfaces/parser-output';
 import IPieceDeclaration from '../interfaces/piece-declaration';
 
-const pathToTemplate = path.join(process.cwd(), 'assets', 'xml-template.xml');
-
 export default class XMLComposer implements IOutputComposer {
+  private pathToTemplate = path.join(__dirname, '..', '..', '..', '..', 'assets', 'html-template.html');
+
+  constructor(pathToTemplate?: string) {
+    if (pathToTemplate) {
+      this.pathToTemplate = pathToTemplate;
+    }
+  }
+
   public async compose(parserOutput: IParserOutput): Promise<Buffer> {
     let xmlTemplate;
     try {
-      xmlTemplate = (await fs.readFile(pathToTemplate)).toString();
+      xmlTemplate = (await fs.readFile(this.pathToTemplate)).toString();
     } catch (err) {
       throw new ComposingError(`Error while fetching template: ${err}`);
     }
