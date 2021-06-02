@@ -27,7 +27,7 @@ describe('Output composers', () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: 'ce3d4255fcf19e21ec3af78cba76df0c',
         darwin: '4318bd56b45260a349797b16dbb49aa8',
-        linux: '3ab0a9c8357caa01c2d81101957291c1'
+        linux: 'cb3613ef858302896874d3e89f747260'
       };
 
       const pngComposer = new composers.PNGComposer();
@@ -43,7 +43,7 @@ describe('Output composers', () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: '8bbec4bfdee9aa2a9749cc1eb60a2803',
         darwin: '0978e66c3543423e9f722aa7d6925b30',
-        linux: '92337e7074b55c5075e5330e2e260fe7'
+        linux: 'b54db1eefa628723b8770bc0269bfbaa'
       };
 
       const jpegComposer = new composers.JPEGComposer();
@@ -59,7 +59,7 @@ describe('Output composers', () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: 'eb51044567e7cb9a17cd446cc22959a0',
         darwin: '1f92324554b7fd224816ab9094636c5e',
-        linux: '15751710471d7a13df07e6c85ac1f2e1'
+        linux: '4cbb47575aa94a64a8484aa53e521174'
       };
 
       const webpComposer = new composers.WEBPComposer();
@@ -75,7 +75,7 @@ describe('Output composers', () => {
       const expectedCheckSums: ExpectedCheckSums = {
         win32: '7f95ef59c470ec7804ac658496d84af0',
         darwin: 'dcef00e844cc24d6b8d793f098d55bc7',
-        linux: '5302104bd19f3323798c762dd4aa5a21'
+        linux: 'a9d1c054eda6d8464305ba70994d1a9b'
       };
 
       const tiffComposer = new composers.TIFFComposer();
