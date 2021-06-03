@@ -64,3 +64,5 @@ Basic command is `walnut-chess`, you can run it straight from terminal if you us
 ### Examples
 
 We will provide full set of dsl code and output exmples later.
+
+![/examples/png/output.png/raw=true]()
