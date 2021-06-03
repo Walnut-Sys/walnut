@@ -52,6 +52,7 @@ Basic command is `walnut-chess`, you can run it straight from terminal if you us
 - `--help` - see all avavilable attributes and their purpose.
 - `--source or -s` - specify path to source code `.walnut` file
 - `--out or -o` - specify path and file name of output file
+- `--size` - specify the size of a card in pixels (for image outputs only)
 - `--html` - generate into html file
 - `--jpeg` - generate into jpeg file
 - `--png` - generate into png file
@@ -65,4 +66,66 @@ Basic command is `walnut-chess`, you can run it straight from terminal if you us
 
 ### Examples
 
-We will provide full set of dsl code and output exmples later.
+<br>
+
+- **Let's look in the default example from above:**
+
+```
+LOCALIZATION: EN
+COLORS:
+  white squares: #f9c48d
+  black squares: #84271d
+  white pieces: #c38748
+  black pieces: #150503
+  border: #a73a2f
+  symbols: #efefef
+
+WHITE POS: Ra1,Nb1,Bc1,Qd1,Ke1,Bf1,Ng1,Rh1,a2,b2,c4,d2,e2,f2,g2,h2
+BLACK POS: Ra8,Nb8,Bc8,Qd8,Ke8,Bf8,Ng8,Rh8,a7,b7,c7,d7,e7,f7,g7,h7
+
+```
+
+<img src="https://walnut-chess.s3.eu-central-1.amazonaws.com/output.png" alt="drawing" width="370"/>
+
+<br>
+<br>
+
+- **Now we can change some colors:**
+
+```
+LOCALIZATION: EN
+COLORS:
+  white squares: #f1f1f1
+  black squares: #403b35
+  white pieces: #b9b9b9
+  black pieces: #c78a00
+  border: #131313
+  symbols: #7d691e
+
+WHITE POS: Ra1,Nb1,Bc1,Qd1,Ke1,Bf1,Ng1,Rh1,a2,b2,c4,d2,e2,f2,g2,h2
+BLACK POS: Ra8,Nb8,Bc8,Qd8,Ke8,Bf8,Ng8,Rh8,a7,b7,c7,d7,e7,f7,g7,h7
+
+```
+
+<img src="https://walnut-chess.s3.eu-central-1.amazonaws.com/output-color.png" alt="drawing" width="370"/>
+
+<br>
+<br>
+
+- **Here is an example with Russian localization and four knights game**
+
+```
+LOCALIZATION: RU
+COLORS:
+  white squares: #f9c48d
+  black squares: #84271d
+  white pieces: #c38748
+  black pieces: #150503
+  border: #a73a2f
+  symbols: #efefef
+
+WHITE POS: Ла1,Кв3,Св1,Фг1,Крд1,Се1,Ке3,Лз1,а2,б2,в2,г4,д2,е2,ж2,з2
+BLACK POS: Ла8,Кв6,Св8,Фг8,Крд8,Се8,Ке6,Лз8,а7,б7,в7,г5,д7,е7,ж7,з7
+```
+
+<img src="https://walnut-chess.s3.eu-central-1.amazonaws.com/output-localization.png" alt="drawing" width="370"/>

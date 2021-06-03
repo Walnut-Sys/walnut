@@ -1,0 +1,11 @@
+LOCALIZATION: EN
+COLORS:
+  white squares: #f1f1f1
+  black squares: #403b35
+  white pieces: #b9b9b9
+  black pieces: #c78a00
+  border: #131313
+  symbols: #7d691e
+
+WHITE POS: Ra1,Nb1,Bc1,Qd1,Ke1,Bf1,Ng1,Rh1,a2,b2,c4,d2,e2,f2,g2,h2
+BLACK POS: Ra8,Nb8,Bc8,Qd8,Ke8,Bf8,Ng8,Rh8,a7,b7,c7,d7,e7,f7,g7,h7

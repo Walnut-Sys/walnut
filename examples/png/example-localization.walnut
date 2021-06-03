@@ -1,0 +1,11 @@
+LOCALIZATION: RU
+COLORS:
+  white squares: #f9c48d
+  black squares: #84271d
+  white pieces: #c38748
+  black pieces: #150503
+  border: #a73a2f
+  symbols: #efefef
+
+WHITE POS: Ла1,Кв3,Св1,Фг1,Крд1,Се1,Ке3,Лз1,а2,б2,в2,г4,д2,е2,ж2,з2
+BLACK POS: Ла8,Кв6,Св8,Фг8,Крд8,Се8,Ке6,Лз8,а7,б7,в7,г5,д7,е7,ж7,з7
