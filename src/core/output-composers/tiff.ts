@@ -6,6 +6,12 @@ import ComposingError from '../errors/composing-error';
 import { IMAGE_SIZE } from '../constants';
 
 export default class TIFFComposer extends ImageOutputComposer implements IOutputComposer {
+  /**
+   * Returns Promise with composed tiff image as Buffer
+   * @param  {IParserOutput} parserOutput
+   * @param  {number=IMAGE_SIZE} size
+   * @returns Promise
+   */
   public async compose(parserOutput: IParserOutput, size: number = IMAGE_SIZE): Promise<Buffer> {
     try {
       const svgBuffer = await this.fillSVGTemplate(parserOutput);

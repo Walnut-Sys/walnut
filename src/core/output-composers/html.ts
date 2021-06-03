@@ -24,7 +24,11 @@ export default class HTMLComposer implements IOutputComposer {
       this.pathToTemplate = pathToTemplate;
     }
   }
-
+  /**
+   * Returns Promise with composed html document as Buffer
+   * @param  {IParserOutput} parserOutput
+   * @returns Promise<Buffer>
+   */
   public async compose(parserOutput: IParserOutput): Promise<Buffer> {
     let htmlTemplate;
     try {
@@ -48,6 +52,12 @@ export default class HTMLComposer implements IOutputComposer {
     return Buffer.from(composedHtml);
   }
 
+  /**
+   * Returns html markup of squares and pieces
+   * @param  {IPieceDeclaration[]} whitePieces
+   * @param  {IPieceDeclaration[]} blackPieces
+   * @returns string
+   */
   // eslint-disable-next-line sonarjs/cognitive-complexity
   private generateBoard(
     whitePieces: IPieceDeclaration[],
@@ -77,7 +87,11 @@ export default class HTMLComposer implements IOutputComposer {
     }
     return board;
   }
-
+  /**
+   * Returns html markup of board letters and numbers
+   * @param  {Localizations} localization
+   * @returns string
+   */
   private generateBoardLetters(localization: Localizations): string {
     return LOCALIZATIONS_DICTIONARY[localization].x.reduce(
       (acc, letter) => acc + `<li>${letter}</li>`,

@@ -21,7 +21,11 @@ export default class XMLComposer implements IOutputComposer {
       this.pathToTemplate = pathToTemplate;
     }
   }
-
+  /**
+   * Returns Promise with composed xml document, with parserOutput info as Buffer
+   * @param  {IParserOutput} parserOutput
+   * @returns Promise
+   */
   public async compose(parserOutput: IParserOutput): Promise<Buffer> {
     let xmlTemplate;
     try {
@@ -42,7 +46,11 @@ export default class XMLComposer implements IOutputComposer {
 
     return Buffer.from(composedXml);
   }
-
+  /**
+   * Creates xml markup of a list of pieces positions
+   * @param  {Array<IPieceDeclaration>} pieceDeclarations
+   * @returns string
+   */
   private generatePostionsList(pieceDeclarations: Array<IPieceDeclaration>): string {
     return pieceDeclarations.reduce(
       (acc, declaration) =>

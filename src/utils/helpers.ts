@@ -12,14 +12,20 @@ export const standardizeValue = (value: any, supportedValues: any[], defaultValu
   const supportedValue = supportedValues.find((supportedValue) => {
     if (typeof value === 'string') {
       return supportedValue.toLowerCase() === value.toLowerCase();
-    }
-    else {
+    } else {
       return supportedValue === value;
     }
   });
   return supportedValue ?? defaultValue;
 };
 
+/**
+ * Returns checksum of passed data using passed algorithm and encoding
+ * @param  {any} data
+ * @param  {} {algorithm='md5'
+ * @param  {} inputEncoding='utf-8'ascrypto.Encoding
+ * @param  {} outputEncoding='hex'ascrypto.BinaryToTextEncoding}={}
+ */
 export const generateCheckSum = (
   data: any,
   {

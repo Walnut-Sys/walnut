@@ -6,6 +6,7 @@
 **Walnut** is a DSL (domain specific language) for generating chess problem cards. Walnut supports algebraic chess notation, so the language is intuitively understandable. You can generate cards in different formats whether graphic or html.
 
 ### DSL
+
 Cards are generated via creating `.walnut` source code file. Currently DSL contains 3 parts:
 
 - `LOCALIZATION` localization configuration. You can choose english - latin letters(`EN`) or russian(`RU`) - Cyrillic
@@ -36,6 +37,7 @@ BLACK POS: Ra8,Nb8,Bc8,Qd8,Ke8,Bf8,Ng8,Rh8,a7,b7,c7,d7,e7,f7,g7,h7
 ```
 
 ### CLI
+
 To generate cards you can use our command line interface, it does not require you to write any additional code.
 Basic command is `walnut-chess`, you can run it straight from terminal if you use unix os, if you use Windows you can add `npx walnut-chess` to run it from terminal. Or you can also create npm script with the command:
 
