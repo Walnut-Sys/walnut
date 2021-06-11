@@ -1,7 +1,7 @@
 import path from 'path';
 import { promises as fs } from 'fs';
-import IOutputComposer from '../interfaces/output-composer';
 import ComposingError from '../errors/composing-error';
+import IOutputComposer from '../interfaces/output-composer';
 import IParserOutput from '../interfaces/parser-output';
 import IPieceDeclaration from '../interfaces/piece-declaration';
 
@@ -41,17 +41,18 @@ export default class XMLComposer implements IOutputComposer {
       .replace('#BLACK_PIECE_COLOR#', parserOutput.colors.blackPieces)
       .replace('#WHITE_PIECE_COLOR#', parserOutput.colors.whitePieces)
       .replace('#SYMBOLS_COLOR#', parserOutput.colors.symbols)
-      .replace('#WHITE_POSITIONS#', this.generatePostionsList(parserOutput.whitePositions))
-      .replace('#BLACK_POSITIONS#', this.generatePostionsList(parserOutput.blackPositions));
+      .replace('#WHITE_POSITIONS#', this.generatePositionsList(parserOutput.whitePositions))
+      .replace('#BLACK_POSITIONS#', this.generatePositionsList(parserOutput.blackPositions));
 
     return Buffer.from(composedXml);
   }
+
   /**
    * Creates xml markup of a list of pieces positions
    * @param  {Array<IPieceDeclaration>} pieceDeclarations
    * @returns string
    */
-  private generatePostionsList(pieceDeclarations: Array<IPieceDeclaration>): string {
+  private generatePositionsList(pieceDeclarations: Array<IPieceDeclaration>): string {
     return pieceDeclarations.reduce(
       (acc, declaration) =>
         acc +
