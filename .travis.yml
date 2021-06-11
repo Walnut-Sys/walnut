@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - lts/*
+before_script:
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) download
 before_install:
   - npm install -g codecov
 install: npm ci
@@ -9,4 +11,5 @@ script:
   - npm run build
   - npm test
   - codecov --token=$CODECOV_TOKEN
-  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r report.xml
+after_success:
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh)
