@@ -1,6 +1,7 @@
 ## 🌰 Walnut - DSL for generating chess problem cards
 
 [![Build Status](https://travis-ci.com/Walnut-Sys/walnut.svg?branch=main)](https://travis-ci.com/Walnut-Sys/walnut)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4f023e921e3c49db972471f6f2d19cd7)](https://www.codacy.com/gh/Walnut-Sys/walnut/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Walnut-Sys/walnut&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/Walnut-Sys/walnut/branch/main/graph/badge.svg?token=YueOCxQelG)](https://codecov.io/gh/Walnut-Sys/walnut)
 
 **Walnut** is a DSL (domain specific language) for generating chess problem cards. Walnut supports algebraic chess notation, so the language is intuitively understandable. You can generate cards in different formats whether graphic or html.
