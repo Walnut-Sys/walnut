@@ -9,3 +9,4 @@ script:
   - npm run build
   - npm test
   - codecov --token=$CODECOV_TOKEN
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r report.xml
