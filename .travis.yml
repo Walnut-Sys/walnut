@@ -10,6 +10,6 @@ script:
   - npm run lint
   - npm run build
   - npm test
-  - codecov --token=$CODECOV_TOKEN
 after_success:
+  - codecov --token=$CODECOV_TOKEN
   - bash <(curl -Ls https://coverage.codacy.com/get.sh)
