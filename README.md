@@ -1,5 +1,6 @@
 ## 🌰 Walnut - DSL for generating chess problem cards
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4e172496b3234ec69a9f84456043601e)](https://app.codacy.com/gh/Walnut-Sys/walnut?utm_source=github.com&utm_medium=referral&utm_content=Walnut-Sys/walnut&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.com/Walnut-Sys/walnut.svg?branch=main)](https://travis-ci.com/Walnut-Sys/walnut)
 [![codecov](https://codecov.io/gh/Walnut-Sys/walnut/branch/main/graph/badge.svg?token=YueOCxQelG)](https://codecov.io/gh/Walnut-Sys/walnut)
 
