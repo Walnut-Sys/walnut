@@ -22,5 +22,3 @@ jobs:
       - run: npm run build
       - run: npm test
       - run: codecov --token=$CODECOV_TOKEN
-      - run: bash <(curl -Ls https://coverage.codacy.com/get.sh)
-
