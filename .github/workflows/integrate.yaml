@@ -1,5 +1,8 @@
 name: CI for walnut-chess
-on: push
+on:
+  push:
+    branches:
+      - '**'
 jobs:
   test_push:
     runs-on: ubuntu-latest
