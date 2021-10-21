@@ -7,6 +7,9 @@ jobs:
   test_push:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v1
         with:
           node-version: 14
@@ -16,6 +19,6 @@ jobs:
       - run: npm run lint
       - run: npm run build
       - run: npm test
-      - run: codecov --token=$CODECOV_TOKEN
+      - run: codecov --token=${{ secrets.CODECOV_TOKEN }}
       - run: bash <(curl -Ls https://coverage.codacy.com/get.sh)
 
